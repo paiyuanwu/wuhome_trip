@@ -685,27 +685,41 @@ navBtns.forEach(btn=>{
   });
 });
 
-/* ============ Auto Fetch Live Exchange Rate ============ */
+/* ============ Auto Fetch Live Exchange Rate (VISA) ============ */
 const rateInput = document.getElementById("rate-input");
 const liveTag = document.getElementById("live-tag");
-fetch('https://open.er-api.com/v6/latest/JPY')
-  .then(response => response.json())
-  .then(data => {
-    if(data && data.rates && data.rates.TWD) {
-      rateInput.value = data.rates.TWD.toFixed(4);
-      liveTag.textContent = "即時匯率更新成功";
+const targetUrl = 'https://www.twrates.com/card/visa/jpy.html';
+const proxyUrl = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(targetUrl);
+
+fetch(proxyUrl)
+  .then(response => response.text())
+  .then(html => {
+    // 將抓回來的 HTML 字串解析成 DOM 節點
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, 'text/html');
+    
+    // 取得網頁上的純文字，並用正規表達式尋找 VISA 匯率數字
+    const text = doc.body.innerText;
+    // 匹配類似 "匯率: 0.2064" 的特徵（抓取小數點後 4~8 位的數字）
+    const match = text.match(/匯率[:：]?\s*(0\.[0-9]{4,8})/);
+    
+    if (match && match[1]) {
+      rateInput.value = parseFloat(match[1]).toFixed(4);
+      liveTag.textContent = "VISA 匯率更新成功";
       liveTag.style.background = "#48BB78";
       liveTag.style.animation = "none";
       recalcShop();
       recalcQuick();
+    } else {
+      throw new Error("無法在網頁中解析出匯率數字");
     }
   })
   .catch(err => {
+    console.error("Fetch VISA rate error:", err);
     liveTag.textContent = "無法抓取匯率，使用預設";
     liveTag.style.background = "#A0ABC0";
     liveTag.style.animation = "none";
   });
-
 
 /* ============ currency: shopping estimator ============ */
 const shopJpy = document.getElementById("shop-jpy");
