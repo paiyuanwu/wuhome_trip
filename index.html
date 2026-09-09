@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<title>東京・富士 秋日行 2026.10.02–10.09</title>
+<title>吳家日本東京・富士秋季行 2026.10.02–10.09</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -20,7 +20,7 @@
     --line: #E5E9F0;
     --green: #408A63;
     --blue: #2B6CB0;
-    --shadow: 0 12px 36px rgba(31, 42, 61, 0.08);
+    --shadow: 0 6px 16px rgba(31, 42, 61, 0.06);
     --safe-bottom: env(safe-area-inset-bottom, 0px);
   }
   * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -29,7 +29,7 @@
     color: var(--ink);
     font-family: "Noto Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     -webkit-font-smoothing: antialiased;
-    padding-bottom: calc(76px + var(--safe-bottom));
+    padding-bottom: calc(56px + var(--safe-bottom));
     min-height: 100vh;
   }
   h1, h2, h3, .serif { font-family: "Noto Serif TC", serif; }
@@ -39,288 +39,280 @@
   .hero {
     background: linear-gradient(145deg, #2C3E50 0%, #1A2536 100%);
     color: #FFF;
-    padding: 32px 24px 28px;
+    padding: 16px 16px 14px;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
   }
   .hero::before {
-    content: ""; position: absolute; right: -50px; top: -50px;
-    width: 250px; height: 250px; border-radius: 50%;
+    content: ""; position: absolute; right: -30px; top: -30px;
+    width: 150px; height: 150px; border-radius: 50%;
     background: radial-gradient(circle, rgba(226,91,54,0.4) 0%, rgba(226,91,54,0) 70%);
   }
   .hero::after {
-    content: ""; position: absolute; left: -40px; bottom: -80px;
-    width: 200px; height: 200px; border-radius: 50%;
+    content: ""; position: absolute; left: -20px; bottom: -50px;
+    width: 120px; height: 120px; border-radius: 50%;
     background: radial-gradient(circle, rgba(209,145,66,0.3) 0%, rgba(209,145,66,0) 70%);
   }
   .hero .eyebrow {
-    font-size: 13px; letter-spacing: 0.16em; color: #F0C48D; margin: 0 0 10px;
-    position: relative; z-index: 1; font-weight: 800; text-transform: uppercase;
+    font-size: 11px; letter-spacing: 0.1em; color: #F0C48D; margin: 0 0 4px;
+    position: relative; z-index: 1; font-weight: 800;
   }
   .hero h1 {
-    font-size: 30px; line-height: 1.35; margin: 0 0 12px; font-weight: 900;
-    position: relative; z-index: 1; letter-spacing: 0.02em;
+    font-size: 22px; line-height: 1.3; margin: 0 0 6px; font-weight: 900;
+    position: relative; z-index: 1;
   }
   .hero p.dates {
-    margin: 0; font-size: 14px; color: #D1D8E5; position: relative; z-index: 1;
-    display: flex; align-items: center; gap: 6px; font-weight: 500;
+    margin: 0; font-size: 12px; color: #D1D8E5; position: relative; z-index: 1;
+    display: flex; align-items: center; gap: 4px; font-weight: 500;
   }
-  .hero p.dates::before { content: "◆"; color: var(--accent); font-size: 10px; }
+  .hero p.dates::before { content: "◆"; color: var(--accent); font-size: 8px; }
 
   /* ---------- BOTTOM NAV ---------- */
   .bottom-nav {
     position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
-    display: flex; background: rgba(255, 255, 255, 0.92);
+    display: flex; background: rgba(255, 255, 255, 0.94);
     backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
     border-top: 1px solid rgba(0,0,0,0.05);
     padding-bottom: var(--safe-bottom);
-    box-shadow: 0 -10px 30px rgba(0,0,0,0.04);
+    box-shadow: 0 -4px 16px rgba(0,0,0,0.04);
   }
   .bottom-nav button {
     flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
-    background: none; border: none; padding: 12px 4px 10px;
-    color: #A0ABC0; font-size: 12px; font-weight: 600; cursor: pointer; position: relative;
-    transition: 0.2s;
+    background: none; border: none; padding: 8px 4px;
+    color: #A0ABC0; font-size: 11px; font-weight: 700; cursor: pointer; position: relative;
   }
-  .bottom-nav button .ic { font-size: 22px; margin-bottom: 4px; filter: grayscale(1); opacity: 0.7; transition: 0.2s; }
+  .bottom-nav button .ic { font-size: 20px; margin-bottom: 2px; filter: grayscale(1); opacity: 0.7; transition: 0.2s; }
   .bottom-nav button.active { color: var(--accent); }
-  .bottom-nav button.active .ic { filter: grayscale(0); opacity: 1; transform: translateY(-2px); }
+  .bottom-nav button.active .ic { filter: grayscale(0); opacity: 1; transform: translateY(-1px); }
   .bottom-nav button.active::before {
     content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-    width: 32px; height: 3px; border-radius: 0 0 4px 4px; background: var(--accent);
+    width: 24px; height: 3px; border-radius: 0 0 4px 4px; background: var(--accent);
   }
 
   /* ---------- VIEWS ---------- */
   .view { display: none; }
-  .view.active { display: block; animation: fadeUp 0.35s cubic-bezier(0.2, 0.8, 0.2, 1); }
-  @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+  .view.active { display: block; animation: fadeUp 0.25s ease-out; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 
   /* ---------- MAP ---------- */
-  .map-wrap { position: relative; background: #FFF; box-shadow: 0 4px 12px rgba(0,0,0,0.03); z-index: 10; }
-  #overview-map { width: 100%; height: 32vh; min-height: 220px; background: #EDF1F5; }
+  .map-wrap { position: relative; background: #FFF; box-shadow: 0 2px 8px rgba(0,0,0,0.03); z-index: 10; }
+  #overview-map { width: 100%; height: 25vh; min-height: 180px; background: #EDF1F5; }
   
   .day-pills {
-    display: flex; gap: 10px; overflow-x: auto; padding: 14px 20px;
+    display: flex; gap: 8px; overflow-x: auto; padding: 10px 16px;
     background: var(--card); border-bottom: 1px solid var(--line);
     -webkit-overflow-scrolling: touch; scrollbar-width: none;
   }
   .day-pills::-webkit-scrollbar { display: none; }
   .day-pill {
-    flex: 0 0 auto; padding: 10px 18px; border-radius: 12px;
-    background: var(--paper-2); color: var(--ink-soft); font-size: 14px;
-    font-weight: 700; cursor: pointer; transition: 0.2s; border: 2px solid transparent;
+    flex: 0 0 auto; padding: 8px 14px; border-radius: 10px;
+    background: var(--paper-2); color: var(--ink-soft); font-size: 13px;
+    font-weight: 700; cursor: pointer; transition: 0.2s; border: 1px solid transparent;
   }
-  .day-pill .wk { opacity: 0.6; margin-left: 4px; font-size: 12px; font-weight: 500;}
+  .day-pill .wk { opacity: 0.6; margin-left: 2px; font-size: 11px; font-weight: 500;}
   .day-pill.active {
     background: #FFF1EE; color: var(--accent); border-color: var(--accent);
-    box-shadow: 0 4px 12px rgba(226,91,54,0.15);
   }
 
   /* ---------- DAY CONTENT ---------- */
-  .day-panel { display: none; padding: 24px 20px 10px; }
+  .day-panel { display: none; padding: 16px 16px 10px; }
   .day-panel.active { display: block; }
 
-  .day-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 4px; }
-  .day-head .num { font-size: 26px; font-weight: 900; color: var(--ink); letter-spacing: 0.02em; }
-  .day-head .wk { color: var(--accent-2); font-size: 15px; font-weight: 800; }
-  .day-title { color: var(--ink-soft); font-size: 15px; margin: 0 0 20px; font-weight: 500; }
+  .day-head { display: flex; align-items: baseline; gap: 8px; margin-bottom: 2px; }
+  .day-head .num { font-size: 22px; font-weight: 900; color: var(--ink); }
+  .day-head .wk { color: var(--accent-2); font-size: 14px; font-weight: 800; }
+  .day-title { color: var(--ink-soft); font-size: 14px; margin: 0 0 16px; font-weight: 500; }
 
   .hotel-banner {
-    display: flex; align-items: center; gap: 12px;
+    display: flex; align-items: center; gap: 8px;
     background: linear-gradient(135deg, #FDF4E7, #F8EAD6); 
-    border-radius: 16px; padding: 14px 16px; margin-bottom: 24px;
-    box-shadow: 0 4px 12px rgba(209,145,66,0.08); border: 1px solid rgba(209,145,66,0.2);
+    border-radius: 12px; padding: 10px 12px; margin-bottom: 16px;
+    border: 1px solid rgba(209,145,66,0.2);
   }
-  .hotel-banner .ic { font-size: 24px; }
-  .hotel-banner .txt { flex: 1; font-size: 14px; font-weight: 700; color: #8A5F20; }
+  .hotel-banner .ic { font-size: 20px; }
+  .hotel-banner .txt { flex: 1; font-size: 13px; font-weight: 700; color: #8A5F20; }
   .hotel-banner a { 
-    color: #FFF; background: #D19142; padding: 6px 14px; border-radius: 20px;
-    text-decoration: none; font-size: 13px; font-weight: 700; white-space: nowrap;
-    box-shadow: 0 2px 6px rgba(209,145,66,0.3);
+    color: #FFF; background: #D19142; padding: 4px 10px; border-radius: 16px;
+    text-decoration: none; font-size: 12px; font-weight: 700; white-space: nowrap;
   }
 
   .timeline { position: relative; padding-left: 2px; }
-  .item { position: relative; display: flex; gap: 16px; padding: 0 0 28px 0; }
+  .item { position: relative; display: flex; gap: 12px; padding: 0 0 20px 0; }
   .item::before {
-    content: ""; position: absolute; left: 19px; top: 40px; bottom: -2px; width: 2px;
+    content: ""; position: absolute; left: 15px; top: 32px; bottom: -2px; width: 2px;
     background: var(--line); border-radius: 2px;
   }
   .item:last-child::before { display: none; }
   .item .badge {
-    flex: 0 0 40px; height: 40px; border-radius: 12px;
+    flex: 0 0 32px; height: 32px; border-radius: 10px;
     background: #FFF; border: 2px solid var(--line);
-    display: flex; align-items: center; justify-content: center; font-size: 20px;
-    z-index: 1; box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+    display: flex; align-items: center; justify-content: center; font-size: 16px;
+    z-index: 1; box-shadow: 0 2px 6px rgba(0,0,0,0.03);
   }
   .item .body { flex: 1; padding-top: 2px; }
-  .item .time { font-size: 13px; color: var(--accent); font-weight: 800; letter-spacing: 0.04em; margin-bottom: 4px; }
-  .item .name { font-size: 17px; font-weight: 800; margin: 0 0 6px; color: var(--ink); line-height: 1.4; }
-  .item .note { font-size: 14px; color: var(--ink-soft); margin: 0 0 10px; line-height: 1.5; font-weight: 500; }
-  .item .note.warn { color: var(--accent); background: #FFF1EE; padding: 6px 10px; border-radius: 8px; display: inline-block;}
-  .item .links { display: flex; gap: 10px; flex-wrap: wrap; }
+  .item .time { font-size: 12px; color: var(--accent); font-weight: 800; margin-bottom: 2px; }
+  .item .name { font-size: 15px; font-weight: 800; margin: 0 0 4px; color: var(--ink); line-height: 1.35; }
+  .item .note { font-size: 12px; color: var(--ink-soft); margin: 0 0 6px; line-height: 1.4; font-weight: 500; }
+  .item .note.warn { color: var(--accent); background: #FFF1EE; padding: 4px 8px; border-radius: 6px; display: inline-block;}
+  .item .links { display: flex; gap: 8px; flex-wrap: wrap; }
   .item .links a {
-    font-size: 13px; text-decoration: none; color: var(--ink);
+    font-size: 11px; text-decoration: none; color: var(--ink);
     background: #FFF; border: 1px solid var(--line);
-    padding: 6px 14px; border-radius: 20px; font-weight: 700;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.03); display: flex; align-items: center; gap: 4px;
+    padding: 4px 10px; border-radius: 16px; font-weight: 700;
+    display: flex; align-items: center; gap: 4px;
   }
   .item .links a.map-link { color: var(--blue); border-color: #CBD5E1; background: #F1F5F9; }
   .item .links a.off-link { color: var(--green); border-color: #C6F6D5; background: #F0FFF4; }
 
   .candidate-card {
-    margin: 10px 20px 30px; background: var(--card); border: 1px solid var(--line);
-    border-radius: 20px; padding: 20px; box-shadow: var(--shadow);
+    margin: 0 16px 20px; background: var(--card); border: 1px solid var(--line);
+    border-radius: 12px; padding: 12px; box-shadow: var(--shadow);
   }
-  .candidate-card h3 { margin: 0 0 8px; font-size: 16px; font-weight: 800; }
-  .candidate-card p.hint { font-size: 14px; color: var(--ink-soft); margin: 0 0 14px; }
-  .candidate-list { display: flex; flex-wrap: wrap; gap: 10px; }
+  .candidate-card h3 { margin: 0 0 6px; font-size: 14px; font-weight: 800; }
+  .candidate-card p.hint { font-size: 12px; color: var(--ink-soft); margin: 0 0 10px; }
+  .candidate-list { display: flex; flex-wrap: wrap; gap: 8px; }
   .candidate-list a {
-    font-size: 13px; text-decoration: none; color: var(--ink);
-    background: var(--paper-2); padding: 8px 16px; border-radius: 20px; font-weight: 700;
-    transition: 0.2s; border: 1px solid transparent;
+    font-size: 12px; text-decoration: none; color: var(--ink);
+    background: var(--paper-2); padding: 6px 12px; border-radius: 16px; font-weight: 700;
+    border: 1px solid transparent;
   }
-  .candidate-list a:active { background: #E2E8F0; }
 
   /* ---------- CONVERT & PHRASE GENERAL ---------- */
-  .inner { padding: 28px 20px 40px; }
-  .section-title { margin: 0 0 6px; font-size: 24px; font-weight: 900; }
-  .section-sub { font-size: 14px; color: var(--ink-soft); margin: 0 0 24px; font-weight: 500; }
+  .inner { padding: 16px 16px 24px; }
+  .section-title { margin: 0 0 2px; font-size: 18px; font-weight: 900; }
+  .section-sub { font-size: 12px; color: var(--ink-soft); margin: 0 0 12px; font-weight: 500; }
   
   .conv-card {
-    background: var(--card); border: 1px solid var(--line); border-radius: 24px;
-    padding: 24px 20px; box-shadow: var(--shadow); margin-bottom: 20px;
+    background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+    padding: 12px 14px; box-shadow: var(--shadow); margin-bottom: 12px;
   }
-  .conv-card h3 { font-size: 17px; margin: 0 0 20px; display: flex; align-items: center; gap: 8px; font-weight: 800; }
-  .conv-row { margin-bottom: 18px; }
-  .conv-row label { font-size: 14px; color: var(--ink-soft); display: block; margin-bottom: 8px; font-weight: 600; }
+  .conv-card h3 { font-size: 15px; margin: 0 0 12px; display: flex; align-items: center; gap: 6px; font-weight: 800; }
+  .conv-row { margin-bottom: 12px; }
+  .conv-row label { font-size: 12px; color: var(--ink-soft); display: block; margin-bottom: 4px; font-weight: 600; }
   
   .conv-input-wrap { 
     display: flex; align-items: stretch; border: 2px solid var(--line); 
-    border-radius: 16px; overflow: hidden; background: #FFF; transition: 0.2s;
+    border-radius: 10px; overflow: hidden; background: #FFF; transition: 0.2s;
   }
   .conv-input-wrap:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(226,91,54,0.15); }
   .conv-input-wrap span { 
-    padding: 0 16px; font-size: 16px; color: var(--ink-soft); 
+    padding: 0 10px; font-size: 14px; color: var(--ink-soft); 
     background: var(--paper-2); display: flex; align-items: center; font-weight: 800; 
   }
   .conv-input-wrap input {
-    flex: 1; border: none; padding: 16px; font-size: 22px; font-family: inherit;
+    flex: 1; border: none; padding: 8px 10px; font-size: 17px; font-family: inherit;
     background: transparent; color: var(--ink); font-weight: 800; min-width: 0;
   }
   .conv-input-wrap input:focus { outline: none; }
-  .conv-swap { text-align: center; color: var(--accent-2); font-size: 18px; margin: 4px 0 16px; font-weight: 800; }
+  .conv-swap { text-align: center; color: var(--accent-2); font-size: 16px; margin: 2px 0 12px; font-weight: 800; }
 
   .rate-row { 
-    display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--ink-soft); 
-    flex-wrap: wrap; margin-bottom: 12px; font-weight: 600; background: #F8F9FA; padding: 12px; border-radius: 12px;
+    display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--ink-soft); 
+    flex-wrap: wrap; margin-bottom: 8px; font-weight: 600; background: #F8F9FA; padding: 8px; border-radius: 8px;
   }
   .rate-row input { 
-    width: 100px; padding: 8px 10px; border-radius: 8px; border: 2px solid var(--line); 
-    font-family: inherit; font-size: 15px; font-weight: 800; text-align: center; color: var(--blue);
+    width: 85px; padding: 4px 6px; border-radius: 6px; border: 2px solid var(--line); 
+    font-family: inherit; font-size: 13px; font-weight: 800; text-align: center; color: var(--blue);
   }
-  .rate-source { font-size: 12px; color: #8BA0B8; font-weight: 500;}
-  .rate-source a { color: var(--blue); font-weight: 600; }
-  .live-tag { background: #48BB78; color: #FFF; padding: 2px 6px; border-radius: 6px; font-size: 10px; font-weight: 800; margin-left: 6px; animation: pulse 2s infinite;}
-  @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.6; } 100% { opacity: 1; } }
+  .live-tag { background: #48BB78; color: #FFF; padding: 2px 4px; border-radius: 4px; font-size: 9px; font-weight: 800; margin-left: 4px;}
 
-  .toggle-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 20px; }
-  .toggle-row .lbl { font-size: 15px; font-weight: 700; color: var(--ink); }
-  .toggle-row .lbl small { display: block; font-size: 12px; color: var(--ink-soft); font-weight: 500; margin-top: 4px; }
-  .switch { position: relative; width: 52px; height: 30px; flex: 0 0 52px; }
+  .toggle-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 12px; }
+  .toggle-row .lbl { font-size: 13px; font-weight: 700; color: var(--ink); }
+  .toggle-row .lbl small { display: block; font-size: 11px; color: var(--ink-soft); font-weight: 500; margin-top: 2px; }
+  .switch { position: relative; width: 44px; height: 24px; flex: 0 0 44px; }
   .switch input { opacity: 0; width: 0; height: 0; }
-  .switch .slider { position: absolute; inset: 0; background: #CBD5E1; border-radius: 999px; transition: .3s; cursor: pointer; }
-  .switch .slider::before { content: ""; position: absolute; width: 24px; height: 24px; left: 3px; top: 3px; background: #FFF; border-radius: 50%; transition: .3s; box-shadow: 0 2px 5px rgba(0,0,0,.2); }
+  .switch .slider { position: absolute; inset: 0; background: #CBD5E1; border-radius: 999px; transition: .2s; cursor: pointer; }
+  .switch .slider::before { content: ""; position: absolute; width: 18px; height: 18px; left: 3px; top: 3px; background: #FFF; border-radius: 50%; transition: .2s; box-shadow: 0 2px 5px rgba(0,0,0,.2); }
   .switch input:checked + .slider { background: var(--accent); }
-  .switch input:checked + .slider::before { transform: translateX(22px); }
+  .switch input:checked + .slider::before { transform: translateX(20px); }
 
-  .pct-row { display: flex; gap: 12px; margin-bottom: 12px; }
+  .pct-row { display: flex; gap: 10px; margin-bottom: 8px; }
   .pct-field { flex: 1; }
-  .pct-field label { font-size: 14px; color: var(--ink-soft); display: block; margin-bottom: 8px; font-weight: 600; }
+  .pct-field label { font-size: 12px; color: var(--ink-soft); display: block; margin-bottom: 4px; font-weight: 600; }
   .pct-input-wrap { 
     display: flex; align-items: center; border: 2px solid var(--line); 
-    border-radius: 12px; overflow: hidden; background: #FFF; transition: 0.2s;
+    border-radius: 10px; overflow: hidden; background: #FFF; transition: 0.2s;
   }
   .pct-input-wrap:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(226,91,54,0.15); }
   .pct-input-wrap input { 
-    flex: 1; border: none; padding: 12px 14px; font-size: 18px; font-family: inherit; 
+    flex: 1; border: none; padding: 8px 10px; font-size: 16px; font-family: inherit; 
     background: transparent; color: var(--ink); font-weight: 800; min-width: 0; 
   }
   .pct-input-wrap input:focus { outline: none; }
-  .pct-input-wrap span { padding: 0 14px; color: var(--ink-soft); font-size: 15px; font-weight: 800; background: var(--paper-2); height: 100%; display: flex; align-items: center;}
+  .pct-input-wrap span { padding: 0 10px; color: var(--ink-soft); font-size: 13px; font-weight: 800; background: var(--paper-2); height: 100%; display: flex; align-items: center;}
   
-  .pct-presets { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0 8px; }
+  .pct-presets { display: flex; gap: 6px; flex-wrap: wrap; margin: 8px 0 4px; }
   .pct-presets button {
     border: 2px solid var(--line); background: #FFF; color: var(--ink-soft);
-    font-size: 13px; padding: 6px 14px; border-radius: 20px; font-family: inherit; 
+    font-size: 12px; padding: 4px 10px; border-radius: 16px; font-family: inherit; 
     cursor: pointer; font-weight: 700; transition: 0.2s;
   }
   .pct-presets button.active { background: #FFF1EE; border-color: var(--accent); color: var(--accent); }
 
   .result-box {
-    margin-top: 10px; background: linear-gradient(135deg, #2C3E50, #1A2536); 
-    border-radius: 20px; padding: 20px 24px; color: #FFF;
-    box-shadow: 0 12px 24px rgba(26,37,54,0.25);
+    margin-top: 8px; background: linear-gradient(135deg, #2C3E50, #1A2536); 
+    border-radius: 12px; padding: 10px 14px; color: #FFF;
+    box-shadow: 0 6px 12px rgba(26,37,54,0.15);
   }
-  .result-box .row { display: flex; justify-content: space-between; font-size: 14px; color: #94A3B8; padding: 6px 0; font-weight: 600; }
+  .result-box .row { display: flex; justify-content: space-between; font-size: 12px; color: #94A3B8; padding: 4px 0; font-weight: 600; }
   .result-box .row span:last-child { color: #E2E8F0; }
   .result-box .row.final { 
-    font-size: 20px; font-weight: 900; color: #FFF; 
-    border-top: 1px dashed rgba(255,255,255,0.2); margin-top: 10px; padding-top: 16px; 
+    font-size: 16px; font-weight: 900; color: #FFF; 
+    border-top: 1px dashed rgba(255,255,255,0.2); margin-top: 6px; padding-top: 10px; 
   }
-  .result-box .row.final span:last-child { color: #F6AD55; font-size: 24px; }
-  .conv-note { font-size: 13px; color: #8BA0B8; line-height: 1.6; font-weight: 500; text-align: center; }
+  .result-box .row.final span:last-child { color: #F6AD55; font-size: 18px; }
+  .conv-note { font-size: 11px; color: #8BA0B8; line-height: 1.5; font-weight: 500; text-align: center; margin-top: 6px; }
 
   /* ---------- PHRASEBOOK ---------- */
   .phrase-tabs { 
-    display: flex; gap: 10px; overflow-x: auto; margin-bottom: 20px; 
+    display: flex; gap: 8px; overflow-x: auto; margin-bottom: 12px; 
     -webkit-overflow-scrolling: touch; scrollbar-width: none; padding-bottom: 4px;
   }
   .phrase-tabs::-webkit-scrollbar { display: none; }
   .phrase-tab {
-    flex: 0 0 auto; padding: 10px 20px; border-radius: 12px; border: 2px solid var(--line);
-    background: #FFF; color: var(--ink-soft); font-size: 15px; font-weight: 700; 
+    flex: 0 0 auto; padding: 8px 16px; border-radius: 10px; border: 2px solid var(--line);
+    background: #FFF; color: var(--ink-soft); font-size: 13px; font-weight: 700; 
     cursor: pointer; transition: 0.2s;
   }
-  .phrase-tab.active { background: var(--ink); border-color: var(--ink); color: #FFF; box-shadow: 0 4px 12px rgba(31,42,61,0.2); }
+  .phrase-tab.active { background: var(--ink); border-color: var(--ink); color: #FFF; }
   
   .phrase-card {
-    background: var(--card); border: 1px solid var(--line); border-radius: 20px;
-    padding: 18px 20px; margin-bottom: 16px; box-shadow: var(--shadow);
-    display: flex; align-items: center; gap: 16px; cursor: pointer; transition: 0.2s;
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    padding: 12px 14px; margin-bottom: 12px; box-shadow: var(--shadow);
+    display: flex; align-items: center; gap: 12px; cursor: pointer; transition: 0.2s;
   }
   .phrase-card:active { transform: scale(0.98); }
   .phrase-card .txt { flex: 1; }
-  .phrase-card .ja { font-size: 20px; font-weight: 800; margin: 0 0 6px; color: var(--ink); letter-spacing: 0.02em;}
-  .phrase-card .kana { font-size: 13px; color: var(--accent-2); margin: 0 0 6px; font-weight: 600; font-family: monospace; }
-  .phrase-card .zh { font-size: 15px; color: var(--ink-soft); margin: 0; font-weight: 500; }
+  .phrase-card .ja { font-size: 16px; font-weight: 800; margin: 0 0 4px; color: var(--ink); }
+  .phrase-card .kana { font-size: 11px; color: var(--accent-2); margin: 0 0 4px; font-weight: 600; font-family: monospace; }
+  .phrase-card .zh { font-size: 13px; color: var(--ink-soft); margin: 0; font-weight: 500; }
   
   .speak-btn {
-    flex: 0 0 52px; height: 52px; border-radius: 50%; border: none;
-    background: #FFF1EE; color: var(--accent); font-size: 24px; cursor: pointer;
+    flex: 0 0 44px; height: 44px; border-radius: 50%; border: none;
+    background: #FFF1EE; color: var(--accent); font-size: 20px; cursor: pointer;
     display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 4px 12px rgba(226,91,54,0.15); transition: 0.2s;
+    box-shadow: 0 2px 8px rgba(226,91,54,0.1); transition: 0.2s;
   }
-  .speak-btn.playing { background: var(--accent); color: #FFF; transform: scale(1.1); box-shadow: 0 8px 20px rgba(226,91,54,0.3); }
-  .phrase-note { font-size: 13px; color: #8BA0B8; margin-top: 20px; line-height: 1.6; font-weight: 500; text-align: center; }
+  .speak-btn.playing { background: var(--accent); color: #FFF; transform: scale(1.1); }
+  .phrase-note { font-size: 11px; color: #8BA0B8; margin-top: 16px; line-height: 1.5; font-weight: 500; text-align: center; }
 
   /* ---------- FLASHCARD MODAL ---------- */
   #flashcard-modal {
     position: fixed; inset: 0; background: rgba(31,42,61,0.95); z-index: 100;
     display: flex; flex-direction: column; align-items: center; justify-content: center;
-    padding: 30px; opacity: 0; pointer-events: none; transition: 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
-    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    padding: 20px; opacity: 0; pointer-events: none; transition: 0.25s ease-out;
+    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
   }
   #flashcard-modal.show { opacity: 1; pointer-events: auto; }
-  .fc-content { text-align: center; max-width: 90vw; }
-  .fc-ja { font-size: 10vw; font-weight: 900; color: #FFF; margin: 0 0 20px; line-height: 1.3; text-shadow: 0 4px 20px rgba(0,0,0,0.5); }
-  @media(min-width: 600px) { .fc-ja { font-size: 60px; } }
-  .fc-kana { font-size: 20px; color: #F0C48D; margin: 0 0 20px; font-weight: 600; font-family: monospace; }
-  .fc-zh { font-size: 24px; color: #A0ABC0; margin: 0; font-weight: 500; }
+  .fc-content { text-align: center; max-width: 95vw; }
+  .fc-ja { font-size: 10vw; font-weight: 900; color: #FFF; margin: 0 0 16px; line-height: 1.3; }
+  @media(min-width: 500px) { .fc-ja { font-size: 50px; } }
+  .fc-kana { font-size: 16px; color: #F0C48D; margin: 0 0 16px; font-weight: 600; font-family: monospace; }
+  .fc-zh { font-size: 20px; color: #A0ABC0; margin: 0; font-weight: 500; }
   .fc-close {
-    position: absolute; top: 40px; right: 30px; background: rgba(255,255,255,0.2);
-    border: none; color: #FFF; width: 44px; height: 44px; border-radius: 50%;
-    font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+    position: absolute; top: 30px; right: 20px; background: rgba(255,255,255,0.2);
+    border: none; color: #FFF; width: 40px; height: 40px; border-radius: 50%;
+    font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center;
   }
 </style>
 </head>
@@ -328,7 +320,7 @@
 
 <header class="hero">
   <p class="eyebrow">JAPAN TRIP</p>
-  <h1>東京・富士五湖<br>秋日行</h1>
+  <h1>東京・富士五湖 秋日行</h1>
   <p class="dates">2026.10.02（五）— 10.09（五）・8天7夜</p>
 </header>
 
@@ -340,8 +332,7 @@
   </div>
   <div id="day-panels"></div>
   <div class="candidate-card">
-    <h3>🍽️ 候補餐廳（尚未排入特定日期）</h3>
-    <p class="hint">以下幾間先列著，之後再依行程機動安排是哪一天吃：</p>
+    <h3>🍽️ 候補餐廳（機動安排）</h3>
     <div class="candidate-list" id="candidate-list"></div>
   </div>
 </section>
@@ -352,7 +343,6 @@
     <h2 class="serif section-title">日圓／台幣 換算</h2>
     <p class="section-sub">即時抓取匯率，或自訂計算</p>
 
-    <!-- 將快速換算移到上方 -->
     <div class="conv-card">
       <h3>💱 快速雙向換算</h3>
       <div class="conv-row">
@@ -360,13 +350,12 @@
         <div class="conv-input-wrap"><span>¥</span><input type="number" id="jpy-input" inputmode="decimal" pattern="[0-9]*" placeholder="0"></div>
       </div>
       <div class="conv-swap">↕ 使用下方同一組匯率</div>
-      <div class="conv-row">
+      <div class="conv-row" style="margin-bottom:0;">
         <label>台幣 TWD</label>
         <div class="conv-input-wrap"><span>NT$</span><input type="number" id="twd-input" inputmode="decimal" pattern="[0-9]*" placeholder="0"></div>
       </div>
     </div>
 
-    <!-- 購物實付估算移到下方 -->
     <div class="conv-card">
       <h3>🛍️ 購物實付估算</h3>
       <div class="conv-row">
@@ -395,20 +384,19 @@
       </div>
 
       <div class="rate-row">
-        匯率：1 JPY = <input type="number" id="rate-input" step="0.0001" value="0.2100" inputmode="decimal"> TWD
-        <span class="live-tag" id="live-tag">自動更新中...</span>
+        1 JPY = <input type="number" id="rate-input" step="0.0001" value="0.2100" inputmode="decimal"> TWD
+        <span class="live-tag" id="live-tag">更新中...</span>
       </div>
-      <p class="rate-source">當日參考匯率，打開網頁時會自動抓取最新市場匯率（您也可以手動更改）。</p>
 
       <div class="result-box">
         <div class="row"><span>折扣後金額</span><span id="r-after-discount">¥0</span></div>
-        <div class="row"><span>退稅後實付（日圓）</span><span id="r-after-refund">¥0</span></div>
+        <div class="row"><span>退稅後（日圓）</span><span id="r-after-refund">¥0</span></div>
         <div class="row"><span>刷卡手續費</span><span id="r-fee">＋NT$0</span></div>
-        <div class="row final"><span>台幣實付金額估算</span><span id="r-final">NT$0</span></div>
+        <div class="row final"><span>台幣實付估算</span><span id="r-final">NT$0</span></div>
       </div>
     </div>
     
-    <p class="conv-note">匯率每日變動，出發前建議至銀行 App 再次確認當日匯率；此頁計算結果僅供旅途中概略估算參考。</p>
+    <p class="conv-note">匯率每日變動，結果僅供旅途中概略估算參考。</p>
   </div>
 </section>
 
@@ -416,10 +404,9 @@
 <section id="view-phrase" class="view">
   <div class="inner">
     <h2 class="serif section-title">日文萬用句</h2>
-    <p class="section-sub">點擊卡片可放大顯示，按 🔊 播放日文發音</p>
+    <p class="section-sub">點擊卡片可放大顯示，按 🔊 播放發音</p>
     <div class="phrase-tabs" id="phrase-tabs"></div>
     <div id="phrase-list"></div>
-    <p class="phrase-note">發音使用手機瀏覽器內建的語音合成功能；若沒有聲音，可到手機設定安裝日文語音。</p>
   </div>
 </section>
 
@@ -455,15 +442,15 @@ function mapsLink(q){
 /* ============ trip data ============ */
 const days = [
   {
-    date:"10/2", wk:"五", title:"高雄出發 → 成田 → 淺草", hotel:{name:"ホテルアマネク浅草駅前", official:"https://amanekhotels.jp/asakusa/", mapQuery:"ホテルアマネク浅草駅前"},
+    date:"10/2", wk:"五", title:"出發 → 成田 → 淺草", hotel:{name:"ホテルアマネク浅草駅前", mapQuery:"ホテルアマネク浅草駅前"},
     items:[
       {time:"11:00", icon:"🧳", name:"高雄小港國際機場集合", mapQuery:"高雄國際機場"},
       {time:"11:30", icon:"🍽️", name:"南苑貴賓室 (享用美味午餐)", mapQuery:"高雄機場 南苑貴賓室"},
       {time:"14:00", icon:"✈️", name:"高雄小港國際機場起飛", note:"捷星航空 GK018", mapQuery:"高雄國際機場"},
-      {time:"18:30", icon:"🛬", name:"成田國際機場 第3航廈", mapQuery:"成田国際空港 第3ターミナル", big:{lat:35.7719,lng:140.3929}},
+      {time:"18:30", icon:"🛬", name:"成田國際機場 T3", mapQuery:"成田国際空港 第3ターミナル", big:{lat:35.7719,lng:140.3929}},
       {time:"19:00", icon:"🚈", name:"京成本線 Access Express", mapQuery:"京成本線"},
       {time:"20:08", icon:"🚈", name:"京成成田 SKYACCESS", mapQuery:"京成成田"},
-      {icon:"🏨", name:"住宿：ホテルアマネク浅草駅前", official:"https://amanekhotels.jp/asakusa/", mapQuery:"ホテルアマネク浅草駅前", big:{lat:35.7108,lng:139.7963}},
+      {icon:"🏨", name:"住宿：ホテルアマネク浅草駅前", mapQuery:"ホテルアマネク浅草駅前", big:{lat:35.7108,lng:139.7963}},
       {time:"晚餐", icon:"🍜", name:"拉麵", mapQuery:"浅草 拉麵"}
     ]
   },
@@ -471,11 +458,11 @@ const days = [
     date:"10/3", wk:"六", title:"淺草・三鷹・上野", hotel:{name:"ホテルアマネク浅草駅前", mapQuery:"ホテルアマネク浅草駅前"},
     items:[
       {time:"10:30", icon:"⛩️", name:"淺草寺、淺草仲見世商店街", mapQuery:"浅草寺", big:{lat:35.7148,lng:139.7967}},
-      {time:"午餐", icon:"🍲", name:"今半別館", official:"http://www.asakusa-imahan.co.jp/", mapQuery:"今半別館 浅草"},
+      {time:"午餐", icon:"🍲", name:"今半別館", mapQuery:"今半別館 浅草"},
       {time:"14:00", icon:"🎬", name:"三鷹之森吉卜力美術館", mapQuery:"三鷹の森ジブリ美術館", big:{lat:35.6960,lng:139.5704}},
       {time:"16:00", icon:"🌳", name:"上野公園 不忍池", mapQuery:"上野恩賜公園 不忍池"},
-      {icon:"🛍️", name:"阿美橫町", mapQuery:"アメ横商店街", big:{lat:35.7098,lng:139.7745}},
-      {time:"晚餐", icon:"🍽️", name:"肉の大山 上野店", official:"https://www.ohyama.com/ueno", mapQuery:"肉の大山 上野店"},
+      {time:"18:00", icon:"🛍️", name:"阿美橫町", mapQuery:"アメ横商店街", big:{lat:35.7098,lng:139.7745}},
+      {time:"晚餐", icon:"🍽️", name:"肉の大山 上野店", mapQuery:"肉の大山 上野店"},
       {icon:"🌙", name:"晚間自由行動 (日本人)", mapQuery:"上野"},
       {icon:"🏨", name:"住宿：同上", mapQuery:"ホテルアマネク浅草駅前"}
     ]
@@ -501,38 +488,37 @@ const days = [
     ]
   },
   {
-    date:"10/5", wk:"一", title:"東京前往富士河口湖", hotel:{name:"HAOSTAY", official:"https://www.haostay.jp/", mapQuery:"HAOSTAY 河口湖"},
+    date:"10/5", wk:"一", title:"前往富士河口湖", hotel:{name:"HAOSTAY", mapQuery:"HAOSTAY 河口湖"},
     items:[
       {time:"08:30", icon:"🚶", name:"離開飯店", mapQuery:"ホテルアマネク浅草駅前"},
-      {time:"09:20", icon:"🚌", name:"東京站八重洲側 (高速巴士)", link:"https://japanbusonline.com/bus-repo/zh-hant/%E6%9C%AA%E5%88%86%E9%A1%9E/6955/", mapQuery:"東京駅八重洲南口"},
+      {time:"09:20", icon:"🚌", name:"東京站八重洲側", note:"搭乘高速巴士前往河口湖", link:"https://japanbusonline.com/bus-repo/zh-hant/%E6%9C%AA%E5%88%86%E9%A1%9E/6955/", mapQuery:"東京駅八重洲南口"},
       {time:"11:20", icon:"🚏", name:"抵達河口湖站", mapQuery:"河口湖駅", big:{lat:35.5013,lng:138.7472}},
-      {time:"午餐", icon:"🍲", name:"ほうとう (餺飥) 不動 河口湖站前店", mapQuery:"ほうとう不動 河口湖駅前店"},
-      {icon:"🚗", name:"租車", mapQuery:"河口湖駅 租車"},
-      {icon:"🏪", name:"ローソン富士河口湖町役場前店", mapQuery:"ローソン富士河口湖町役場前店"},
-      {icon:"🏪", name:"羅森便利商店 河口湖車站前店", mapQuery:"ローソン河口湖駅前店"},
-      {icon:"🌳", name:"八木崎公园的大草坪", mapQuery:"八木崎公園"},
-      {icon:"🏘️", name:"(遠) 西湖 療癒之里 根場", mapQuery:"西湖いやしの里根場", big:{lat:35.5107,lng:138.6772}},
-      {icon:"🌸", name:"大石公园的花海", mapQuery:"大石公園"},
-      {icon:"🌾", name:"长崎公园的芦苇荡", mapQuery:"長崎公園 河口湖"},
-      {icon:"🌳", name:"古贺正男纪念公园", mapQuery:"古賀正男記念公園"},
-      {icon:"🏪", name:"ローソン富士河口湖町役場前店", mapQuery:"ローソン富士河口湖町役場前店"},
-      {icon:"🏪", name:"羅森便利商店 河口湖車站前店", mapQuery:"ローソン河口湖駅前店"},
-      {icon:"⌚", name:"日川時計店", mapQuery:"日川時計店 河口湖"},
-      {icon:"⛩️", name:"新仓山浅间公园、新仓富士浅间神社", mapQuery:"新倉山浅間公園"},
-      {icon:"💧", name:"(遠) 忍野八海", mapQuery:"忍野八海"},
-      {icon:"🏞️", name:"(遠) 山中湖", mapQuery:"山中湖"},
-      {icon:"🍮", name:"木村屋布丁", mapQuery:"木村屋 河口湖"},
-      {time:"晚餐", icon:"🍽️", name:"三笑(日本傳統餐) / Oden(屋台) / 宮本屋(日式豬排飯)", mapQuery:"河口湖 晚餐"},
+      {time:"11:30", icon:"🍲", name:"午餐：ほうとう 不動 河口湖站前店", mapQuery:"ほうとう不動 河口湖駅前店"},
+      {time:"12:30", icon:"🚗", name:"租車", mapQuery:"河口湖駅 租車"},
+      {time:"13:00", icon:"🏪", name:"LAWSON 富士河口湖町役場前店", mapQuery:"ローソン富士河口湖町役場前店"},
+      {time:"13:40", icon:"🛣️", name:"前往忍野八海", note:"(車程約 25-30 分鐘)"},
+      {time:"14:10", icon:"💧", name:"忍野八海", mapQuery:"忍野八海"},
+      {time:"15:40", icon:"🛣️", name:"前往山中湖", note:"(車程約 15 分鐘)"},
+      {time:"16:00", icon:"🏞️", name:"山中湖", note:"長池親水公園 或 平野之濱", mapQuery:"山中湖 長池親水公園"},
+      {time:"17:00", icon:"🔙", name:"返回河口湖市區", note:"(車程約 35-40 分鐘)"},
+      {time:"17:40", icon:"🍮", name:"木村屋布丁", mapQuery:"木村屋 河口湖"},
+      {time:"18:30", icon:"🍽️", name:"晚餐：三笑 / Oden(屋台) / 宮本屋", mapQuery:"河口湖 晚餐"},
       {icon:"🏨", name:"住宿：HAOSTAY", mapQuery:"HAOSTAY 河口湖"}
     ]
   },
   {
     date:"10/6", wk:"二", title:"富士河口湖 → 東京", hotel:{name:"ホテルアマネク浅草駅前", mapQuery:"ホテルアマネク浅草駅前"},
     items:[
-      {icon:"🚡", name:"河口湖富士山纜車", mapQuery:"河口湖 富士山パノラマロープウェイ", big:{lat:35.5065,lng:138.7715}},
-      {time:"午餐", icon:"🍽️", name:"午餐", mapQuery:"河口湖 午餐"},
-      {time:"晚餐", icon:"🍜", name:"拉麵", mapQuery:"東京 拉麵"},
-      {icon:"🌙", name:"日本人", mapQuery:"東京"},
+      {time:"08:30", icon:"🎒", name:"退房", mapQuery:"HAOSTAY 河口湖"},
+      {time:"08:45", icon:"⛩️", name:"新倉山淺間公園、新倉富士淺間神社", mapQuery:"新倉山浅間公園"},
+      {time:"10:15", icon:"⌚", name:"日川時計店 ＆ 下吉田散步", note:"(開車 3 分鐘即可抵達)", mapQuery:"日川時計店"},
+      {time:"11:00", icon:"🔙", name:"開車返回河口湖市區", mapQuery:"河口湖"},
+      {time:"11:20", icon:"🚡", name:"河口湖富士山纜車", note:"預留 1.5 小時 🚨若排隊太久可改去八木崎公園", mapQuery:"河口湖 富士山パノラマロープウェイ", big:{lat:35.5065,lng:138.7715}},
+      {time:"12:50", icon:"🔑", name:"歸還租車", mapQuery:"河口湖駅 租車"},
+      {time:"13:00", icon:"🍽️", name:"午餐", mapQuery:"河口湖 午餐"},
+      {time:"14:30", icon:"🚌", name:"搭高速巴士返回東京", mapQuery:"河口湖駅"},
+      {icon:"🏙️", name:"秋葉原", mapQuery:"秋葉原"},
+      {time:"晚餐", icon:"🍜", name:"拉麵", note:"日本人", mapQuery:"東京 拉麵"},
       {icon:"🏨", name:"住宿：ホテルアマネク浅草駅前", mapQuery:"ホテルアマネク浅草駅前"}
     ]
   },
@@ -542,32 +528,36 @@ const days = [
       {icon:"🗼", name:"東京鐵塔", mapQuery:"東京タワー", big:{lat:35.6586,lng:139.7454}},
       {icon:"🏙️", name:"麻布台之丘", mapQuery:"麻布台ヒルズ"},
       {icon:"🌳", name:"芝公園", mapQuery:"芝公園 東京"},
-      {time:"午餐", icon:"🍲", name:"SUKIYAKI 六松", mapQuery:"SUKIYAKI 六松 六本木"},
-      {icon:"💬", name:"富士灌中文", note:"(原行程備註)"},
+      {time:"午餐", icon:"🍲", name:"SUKIYAKI 六松", mapQuery:"SUKIYAKI 六松"},
+      {icon:"💬", name:"富士灌中文", mapQuery:"富士灌"},
       {icon:"🚦", name:"十字路口 (澀谷)", mapQuery:"渋谷スクランブル交差点"},
       {time:"16:00", icon:"🌆", name:"澀谷SKY", mapQuery:"SHIBUYA SKY", big:{lat:35.6580,lng:139.7016}},
-      {time:"晚餐", icon:"🥩", name:"烤肉鶯谷園", link:"https://tabelog.com/tokyo/A1311/A131104/13012243/dtlrvwlst/", mapQuery:"鶯谷園 東京"},
-      {icon:"🍜", name:"拉麵", mapQuery:"拉麵"},
+      {time:"19:00", icon:"🚇", name:"前往烤肉鶯谷園", mapQuery:"鶯谷駅"},
+      {time:"19:40", icon:"🚉", name:"抵達鶯谷站", mapQuery:"鶯谷駅"},
+      {time:"20:00", icon:"🥩", name:"烤肉鶯谷園", link:"https://tabelog.com/tokyo/A1311/A131104/13012243/dtlrvwlst/", mapQuery:"鶯谷園 東京"},
       {icon:"🏨", name:"住宿：同上", mapQuery:"ホテルアマネク浅草駅前"}
     ]
   },
   {
     date:"10/8", wk:"四", title:"皇居・銀座・成田", hotel:{name:"アートホテル成田", mapQuery:"アートホテル成田"},
     items:[
-      {time:"10:00", icon:"🏯", name:"皇居", mapQuery:"皇居", big:{lat:35.6852,lng:139.7528}},
-      {icon:"🛍️", name:"銀座", mapQuery:"銀座 東京"},
-      {time:"午餐", icon:"🍽️", name:"にしたに OR 迴轉壽司 OR 拉麵", mapQuery:"銀座 午餐"},
-      {icon:"🛍️", name:"Outlet or 東京景點", mapQuery:"東京 Outlet"},
-      {time:"晚餐", icon:"🍽️", name:"不知道吃什麼", mapQuery:"成田 晚餐"},
+      {time:"10:30", icon:"🏯", name:"皇居外院", mapQuery:"皇居", big:{lat:35.6852,lng:139.7528}},
+      {time:"12:00", icon:"🍽️", name:"午餐：にしたに OR 迴轉壽司 OR 拉麵", mapQuery:"銀座 午餐"},
+      {time:"13:00", icon:"🛍️", name:"銀座", mapQuery:"銀座 東京"},
+      {time:"14:10", icon:"🚌", name:"搭高速巴士前往 OUTLETS", note:"東京站八重洲高速巴士站 (1,300日圓)", mapQuery:"東京駅八重洲南口"},
+      {time:"15:05", icon:"🛍️", name:"抵達酒酒井 PREMIUM OUTLETS", mapQuery:"酒々井プレミアム・アウトレット"},
+      {icon:"🚌", name:"結束購物前往機場", note:"搭接駁車往JR酒酒井 19:35/20:12/21:00，或 18:40 直達機場 (20:00/20:31/21:45)"},
+      {time:"晚餐", icon:"🍽️", name:"Outlet覓食", mapQuery:"酒々井プレミアム・アウトレット 晚餐"},
+      {time:"22:30前", icon:"♨️", name:"入場享受溫泉", mapQuery:"アートホテル成田"},
       {icon:"🏨", name:"住宿：アートホテル成田", mapQuery:"アートホテル成田", big:{lat:35.7762,lng:140.3319}}
     ]
   },
   {
     date:"10/9", wk:"五", title:"賦歸", hotel:null,
     items:[
-      {time:"10:30", icon:"🚌", name:"アートホテル成田飯店接駁車出發", mapQuery:"アートホテル成田"},
-      {time:"13:55", icon:"🛫", name:"成田國際機場 第2航廈", note:"AirAsia FD235", mapQuery:"成田国際空港 第2ターミナル", big:{lat:35.7719,lng:140.3929}},
-      {time:"17:05", icon:"🛬", name:"高雄小港國際機場", mapQuery:"高雄國際機場"}
+      {time:"10:30", icon:"🚌", name:"飯店接駁車出發", mapQuery:"アートホテル成田"},
+      {time:"13:55", icon:"🛫", name:"成田國際機場 T2", note:"AirAsia FD235", mapQuery:"成田国際空港 第2ターミナル", big:{lat:35.7719,lng:140.3929}},
+      {time:"17:05", icon:"🛬", name:"抵達 高雄小港國際機場", mapQuery:"高雄國際機場"}
     ]
   }
 ];
@@ -609,7 +599,7 @@ days.forEach((d, i)=>{
   html += '<p class="day-title">'+d.title+'</p>';
 
   if(d.hotel){
-    html += '<div class="hotel-banner"><span class="ic">🏨</span><div class="txt">今晚住宿：'+d.hotel.name+'</div>';
+    html += '<div class="hotel-banner"><span class="ic">🏨</span><div class="txt">今晚：'+d.hotel.name+'</div>';
     html += '<a href="'+mapsLink(d.hotel.mapQuery)+'" target="_blank" rel="noopener">地圖</a></div>';
   }
 
@@ -620,11 +610,10 @@ days.forEach((d, i)=>{
     html += '<div class="body">';
     if(it.time) html += '<div class="time">'+it.time+'</div>';
     html += '<div class="name">'+it.name+'</div>';
-    if(it.note) html += '<p class="note'+(it.note.indexOf("⚠️")===0?" warn":"")+'">'+it.note+'</p>';
+    if(it.note) html += '<p class="note'+(it.note.indexOf("🚨")===0?" warn":"")+'">'+it.note+'</p>';
     html += '<div class="links">';
     html += '<a class="map-link" href="'+mapsLink(it.mapQuery)+'" target="_blank" rel="noopener">📍 地圖</a>';
-    if(it.official) html += '<a class="off-link" href="'+it.official+'" target="_blank" rel="noopener">🌐 官網</a>';
-    if(it.link) html += '<a class="off-link" href="'+it.link+'" target="_blank" rel="noopener">🔗 介紹</a>';
+    if(it.link) html += '<a class="off-link" href="'+it.link+'" target="_blank" rel="noopener">🔗 連結</a>';
     html += '</div></div></div>';
   });
   html += '</div>';
@@ -660,15 +649,15 @@ function renderMapForDay(i){
   const bounds = [];
   pts.forEach(it=>{
     const m = L.circleMarker([it.big.lat, it.big.lng], {
-      radius:9, color:"#FFFFFF", weight:2, fillColor:"#E25B36", fillOpacity:0.9
+      radius:7, color:"#FFFFFF", weight:2, fillColor:"#E25B36", fillOpacity:0.9
     }).addTo(markerLayer);
-    m.bindPopup('<b>'+it.name+'</b><br><a href="'+mapsLink(it.mapQuery)+'" target="_blank" rel="noopener">在 Google 地圖開啟</a>');
+    m.bindPopup('<b>'+it.name+'</b><br><a href="'+mapsLink(it.mapQuery)+'" target="_blank" rel="noopener">在地圖開啟</a>');
     bounds.push([it.big.lat, it.big.lng]);
   });
   if(bounds.length===1){
     map.setView(bounds[0], 13);
   } else {
-    map.fitBounds(bounds, {padding:[40,40]});
+    map.fitBounds(bounds, {padding:[30,30]});
   }
 }
 initMap();
@@ -693,17 +682,15 @@ fetch('https://open.er-api.com/v6/latest/JPY')
   .then(data => {
     if(data && data.rates && data.rates.TWD) {
       rateInput.value = data.rates.TWD.toFixed(4);
-      liveTag.textContent = "即時匯率更新成功";
+      liveTag.textContent = "即時";
       liveTag.style.background = "#48BB78";
-      liveTag.style.animation = "none";
       recalcShop();
       recalcQuick();
     }
   })
   .catch(err => {
-    liveTag.textContent = "無法抓取匯率，使用預設";
+    liveTag.textContent = "預設";
     liveTag.style.background = "#A0ABC0";
-    liveTag.style.animation = "none";
   });
 
 
@@ -784,7 +771,7 @@ const phraseData = {
     {ja:"これを探してくれませんか？", kana:"kore o sagashite kuremasen ka?", zh:"請店員幫忙找這個"},
     {ja:"在庫はありますか？", kana:"zaiko wa arimasu ka?", zh:"請問這個還有貨嗎？"},
     {ja:"免税できますか？", kana:"menzei dekimasu ka?", zh:"可以退稅嗎？"},
-    {ja:"このクーポンは使えますか？", kana:"kono kuupon wa tsukaemasu ka?", zh:"請問可以使用這張優惠券嗎？"},
+    {ja:"このクーポンは使えますか？", kana:"kono kuupon wa tsukaemasu ka?", zh:"請問可以使用這優惠券嗎？"},
     {ja:"他の色はありますか？", kana:"hoka no iro wa arimasu ka?", zh:"這件有其他顏色嗎？"},
     {ja:"もっと大きいサイズはありますか？", kana:"motto ookii saizu wa arimasu ka?", zh:"有更大的尺寸嗎？"},
     {ja:"試着してもいいですか？", kana:"shichaku shite mo ii desu ka?", zh:"可以試穿嗎？"},
