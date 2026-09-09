@@ -562,21 +562,9 @@ const days = [
   }
 ];
 
-const candidates = [
-  {name:"居酒屋食呑ほしゃ", mapQuery:"食呑ほしゃ 居酒屋"},
-  {name:"はやし的涮涮鍋", mapQuery:"はやし 涮涮鍋"},
-  {name:"Louga的義大利麵", mapQuery:"Louga 義大利麵"},
-  {name:"CARNE的燒肉", mapQuery:"CARNE 燒肉"}
-];
 
-/* ============ render candidate restaurants ============ */
-const candWrap = document.getElementById("candidate-list");
-candidates.forEach(c=>{
-  const a = document.createElement("a");
-  a.href = mapsLink(c.mapQuery); a.target="_blank"; a.rel="noopener";
-  a.textContent = "📍 " + c.name;
-  candWrap.appendChild(a);
-});
+
+
 
 /* ============ render day pills & panels ============ */
 const pillsWrap = document.getElementById("day-pills");
