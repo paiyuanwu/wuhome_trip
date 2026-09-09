@@ -2,273 +2,326 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <title>東京・富士 秋日行 2026.10.02–10.09</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
-<style>
-  :root{
-    --ink:#1F2A3D;
-    --ink-soft:#5B6478;
-    --paper:#F7F2E7;
-    --paper-2:#EFE6D2;
-    --card:#FFFDF8;
-    --accent:#C1440E;
-    --accent-2:#B5892B;
-    --line:#E3D7B8;
-    --green:#5B7553;
-    --blue:#2A5CAA;
-    --shadow: 0 10px 28px rgba(31,42,61,0.12);
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=AaYuArTncarAFkx5aPvCYW6OqSqFGp7seMQK8SaTNSfh6DmyXY2e42jr19ncpv329wlq0CXoellBFKy1e9HTyvPUgj6T-jwrHsXXhh5KTFWKZEOpEQs6u5ksLypOAH7n1VD5agRS1giACqJ8FST1dENrFakHvI74Bw_cdJ3QOtC4edj9kPvpmktdtvEPzhgK4qZDJtsP4lw8g7vDtNLyEGxlXsL4kwOV3_1Bbbt6vMvbPBICLl8Y_nZeGL4P-hkrHfLuu2LUg8R6IfAguPJRP0jGlWz1kEBQhV8wkBJJeHxbaTUqg-z6utLZMO4sunu49n-0BjE6738D-gn0c6lQgw" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9jb250cmlidXRpb24udXNlcmNvbnRlbnQuZ29vZ2xlLmNvbS9kb3dubG9hZD9jPUNneGlZWEprWDNOMGIzSmhaMlVTVUJJTmNtVnpjRzl1YzJWZlpHRjBZUm9fQ2pBNFlUaGxZVEJqWldGbFpEVmpNVGcyTURBd05qVmlNR1ptTWpSbU56YzFZakF4TlRaaFpEYzNPVGd3TWpNMll6UVNDeElIRU5PLTRKaUtGeGdCJmZpbGVuYW1lPWphcGFuX3RyaXBfYXBwX3YyLmh0bWwmb3BpPTEwMzEzNTA1MA"/><style>
+  :root {
+    --ink: #1F2A3D;
+    --ink-soft: #5B6478;
+    --paper: #F8F9FA;
+    --paper-2: #EDF1F5;
+    --card: #FFFFFF;
+    --accent: #E25B36;
+    --accent-2: #D19142;
+    --line: #E5E9F0;
+    --green: #408A63;
+    --blue: #2B6CB0;
+    --shadow: 0 12px 36px rgba(31, 42, 61, 0.08);
     --safe-bottom: env(safe-area-inset-bottom, 0px);
   }
-  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
-  html,body{margin:0;padding:0;}
-  body{
-    background:var(--paper);
-    color:var(--ink);
-    font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
-    -webkit-font-smoothing:antialiased;
-    padding-bottom:calc(68px + var(--safe-bottom));
-    min-height:100vh;
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { margin: 0; padding: 0; background: var(--paper); }
+  body {
+    color: var(--ink);
+    font-family: "Noto Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: calc(76px + var(--safe-bottom));
+    min-height: 100vh;
   }
-  h1,h2,h3,.serif{ font-family:"Noto Serif TC",serif; }
-  ::selection{ background:#E9C9A8; }
+  h1, h2, h3, .serif { font-family: "Noto Serif TC", serif; }
+  ::selection { background: #FDE8E1; color: var(--accent); }
 
   /* ---------- HERO ---------- */
-  .hero{
-    background:
-      radial-gradient(130% 160% at 12% -10%, #33456A 0%, #1F2A3D 50%, #121B29 100%);
-    color:#F4EFE2;
-    padding:26px 20px 24px;
-    position:relative;
-    overflow:hidden;
+  .hero {
+    background: linear-gradient(145deg, #2C3E50 0%, #1A2536 100%);
+    color: #FFF;
+    padding: 32px 24px 28px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
   }
-  .hero::before{
-    content:"";
-    position:absolute; right:-60px; top:-60px;
-    width:220px; height:220px; border-radius:50%;
-    background:radial-gradient(circle, rgba(193,68,14,0.55) 0%, rgba(193,68,14,0) 70%);
+  .hero::before {
+    content: ""; position: absolute; right: -50px; top: -50px;
+    width: 250px; height: 250px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(226,91,54,0.4) 0%, rgba(226,91,54,0) 70%);
   }
-  .hero::after{
-    content:"";
-    position:absolute; left:-30px; bottom:-70px;
-    width:160px; height:160px; border-radius:50%;
-    background:radial-gradient(circle, rgba(181,137,43,0.35) 0%, rgba(181,137,43,0) 70%);
+  .hero::after {
+    content: ""; position: absolute; left: -40px; bottom: -80px;
+    width: 200px; height: 200px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(209,145,66,0.3) 0%, rgba(209,145,66,0) 70%);
   }
-  .hero .eyebrow{
-    font-size:12px; letter-spacing:.14em; color:#D9BE8C; margin:0 0 8px;
-    position:relative; z-index:1; font-weight:700;
+  .hero .eyebrow {
+    font-size: 13px; letter-spacing: 0.16em; color: #F0C48D; margin: 0 0 10px;
+    position: relative; z-index: 1; font-weight: 800; text-transform: uppercase;
   }
-  .hero h1{
-    font-size:27px; line-height:1.3; margin:0 0 10px; font-weight:900;
-    position:relative; z-index:1;
+  .hero h1 {
+    font-size: 30px; line-height: 1.35; margin: 0 0 12px; font-weight: 900;
+    position: relative; z-index: 1; letter-spacing: 0.02em;
   }
-  .hero p.dates{
-    margin:0; font-size:13.5px; color:#C9CFDD; position:relative; z-index:1;
-    display:flex; align-items:center; gap:6px;
+  .hero p.dates {
+    margin: 0; font-size: 14px; color: #D1D8E5; position: relative; z-index: 1;
+    display: flex; align-items: center; gap: 6px; font-weight: 500;
   }
-  .hero p.dates::before{ content:"◆"; color:var(--accent); font-size:9px; }
+  .hero p.dates::before { content: "◆"; color: var(--accent); font-size: 10px; }
 
   /* ---------- BOTTOM NAV ---------- */
-  .bottom-nav{
-    position:fixed; left:0; right:0; bottom:0; z-index:50;
-    display:flex; background:rgba(255,253,248,0.96);
-    backdrop-filter: blur(8px);
-    border-top:1px solid var(--line);
-    padding-bottom:var(--safe-bottom);
-    box-shadow:0 -8px 22px rgba(31,42,61,0.10);
+  .bottom-nav {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
+    display: flex; background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(0,0,0,0.05);
+    padding-bottom: var(--safe-bottom);
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.04);
   }
-  .bottom-nav button{
-    flex:1; display:flex; flex-direction:column; align-items:center; gap:3px;
-    background:none; border:none; padding:10px 4px 9px; font-family:inherit;
-    color:var(--ink-soft); font-size:11.5px; cursor:pointer; position:relative;
+  .bottom-nav button {
+    flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    background: none; border: none; padding: 12px 4px 10px;
+    color: #A0ABC0; font-size: 12px; font-weight: 600; cursor: pointer; position: relative;
+    transition: 0.2s;
   }
-  .bottom-nav button .ic{ font-size:21px; line-height:1; }
-  .bottom-nav button.active{ color:var(--accent); font-weight:700; }
-  .bottom-nav button.active::before{
-    content:""; position:absolute; top:0; left:50%; transform:translateX(-50%);
-    width:26px; height:3px; border-radius:0 0 4px 4px; background:var(--accent);
+  .bottom-nav button .ic { font-size: 22px; margin-bottom: 4px; filter: grayscale(1); opacity: 0.7; transition: 0.2s; }
+  .bottom-nav button.active { color: var(--accent); }
+  .bottom-nav button.active .ic { filter: grayscale(0); opacity: 1; transform: translateY(-2px); }
+  .bottom-nav button.active::before {
+    content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    width: 32px; height: 3px; border-radius: 0 0 4px 4px; background: var(--accent);
   }
 
   /* ---------- VIEWS ---------- */
-  .view{ display:none; }
-  .view.active{ display:block; animation:fadeIn .25s ease; }
-  @keyframes fadeIn{ from{opacity:0; transform:translateY(4px);} to{opacity:1; transform:none;} }
+  .view { display: none; }
+  .view.active { display: block; animation: fadeUp 0.35s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
 
   /* ---------- MAP ---------- */
-  .map-wrap{ position:relative; }
-  #overview-map{ width:100%; height:36vh; min-height:220px; background:#e7e0cd; }
-  .leaflet-container{ font-family:inherit; }
-
-  .day-pills{
-    display:flex; gap:8px; overflow-x:auto; padding:12px 14px 11px;
-    background:var(--paper-2);
-    border-bottom:1px solid var(--line);
-    -webkit-overflow-scrolling:touch;
-    scrollbar-width:none;
+  .map-wrap { position: relative; background: #FFF; box-shadow: 0 4px 12px rgba(0,0,0,0.03); z-index: 10; }
+  #overview-map { width: 100%; height: 32vh; min-height: 220px; background: #EDF1F5; }
+  
+  .day-pills {
+    display: flex; gap: 10px; overflow-x: auto; padding: 14px 20px;
+    background: var(--card); border-bottom: 1px solid var(--line);
+    -webkit-overflow-scrolling: touch; scrollbar-width: none;
   }
-  .day-pills::-webkit-scrollbar{ display:none; }
-  .day-pill{
-    flex:0 0 auto; padding:8px 15px; border-radius:999px;
-    background:var(--card); border:1px solid var(--line);
-    font-size:13px; color:var(--ink-soft); white-space:nowrap; cursor:pointer;
-    font-weight:600; transition:all .15s ease;
+  .day-pills::-webkit-scrollbar { display: none; }
+  .day-pill {
+    flex: 0 0 auto; padding: 10px 18px; border-radius: 12px;
+    background: var(--paper-2); color: var(--ink-soft); font-size: 14px;
+    font-weight: 700; cursor: pointer; transition: 0.2s; border: 2px solid transparent;
   }
-  .day-pill .wk{ opacity:.6; margin-left:3px; font-size:11px;}
-  .day-pill.active{
-    background:var(--accent); border-color:var(--accent); color:#fff;
-    box-shadow:0 4px 10px rgba(193,68,14,0.35);
+  .day-pill .wk { opacity: 0.6; margin-left: 4px; font-size: 12px; font-weight: 500;}
+  .day-pill.active {
+    background: #FFF1EE; color: var(--accent); border-color: var(--accent);
+    box-shadow: 0 4px 12px rgba(226,91,54,0.15);
   }
 
   /* ---------- DAY CONTENT ---------- */
-  .day-panel{ display:none; padding:18px 16px 8px; }
-  .day-panel.active{ display:block; }
+  .day-panel { display: none; padding: 24px 20px 10px; }
+  .day-panel.active { display: block; }
 
-  .day-head{
-    display:flex; align-items:baseline; gap:10px; margin-bottom:3px;
-  }
-  .day-head .num{ font-size:23px; font-weight:900; }
-  .day-head .wk{ color:var(--accent-2); font-size:13px; font-weight:700; }
-  .day-title{ color:var(--ink-soft); font-size:13.5px; margin:0 0 14px; }
+  .day-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 4px; }
+  .day-head .num { font-size: 26px; font-weight: 900; color: var(--ink); letter-spacing: 0.02em; }
+  .day-head .wk { color: var(--accent-2); font-size: 15px; font-weight: 800; }
+  .day-title { color: var(--ink-soft); font-size: 15px; margin: 0 0 20px; font-weight: 500; }
 
-  .hotel-banner{
-    display:flex; align-items:center; gap:10px;
-    background:linear-gradient(135deg,#EFE6D2,#F3ECDC); border:1px solid var(--line); border-radius:14px;
-    padding:11px 13px; margin-bottom:16px;
+  .hotel-banner {
+    display: flex; align-items: center; gap: 12px;
+    background: linear-gradient(135deg, #FDF4E7, #F8EAD6); 
+    border-radius: 16px; padding: 14px 16px; margin-bottom: 24px;
+    box-shadow: 0 4px 12px rgba(209,145,66,0.08); border: 1px solid rgba(209,145,66,0.2);
   }
-  .hotel-banner .ic{ font-size:20px; }
-  .hotel-banner .txt{ flex:1; font-size:13.5px; font-weight:500; }
-  .hotel-banner a{ color:var(--accent); text-decoration:none; font-size:12.5px; font-weight:700; white-space:nowrap; }
-
-  .timeline{ position:relative; padding-left:2px; }
-  .item{
-    position:relative;
-    display:flex; gap:12px;
-    padding:0 0 20px 0;
-  }
-  .item::before{
-    content:""; position:absolute; left:16px; top:34px; bottom:-2px; width:1px;
-    background:var(--line);
-  }
-  .item:last-child::before{ display:none; }
-  .item .badge{
-    flex:0 0 33px; height:33px; border-radius:50%;
-    background:var(--card); border:1px solid var(--line);
-    display:flex; align-items:center; justify-content:center; font-size:16px;
-    z-index:1; box-shadow:0 2px 5px rgba(31,42,61,0.06);
-  }
-  .item .body{ flex:1; padding-top:2px; }
-  .item .time{ font-size:11.5px; color:var(--accent-2); font-weight:800; letter-spacing:.02em; }
-  .item .name{ font-size:15.5px; font-weight:700; margin:2px 0 3px; }
-  .item .note{ font-size:12.5px; color:var(--ink-soft); margin:0 0 7px; line-height:1.55; }
-  .item .note.warn{ color:var(--accent); font-weight:600; }
-  .item .links{ display:flex; gap:8px; flex-wrap:wrap; }
-  .item .links a{
-    font-size:12px; text-decoration:none; color:var(--ink);
-    background:var(--paper-2); border:1px solid var(--line);
-    padding:5px 10px; border-radius:999px; font-weight:600;
-  }
-  .item .links a.map-link{ color:var(--blue); border-color:#cfd9ec; background:#EEF2FA; }
-  .item .links a.off-link{ color:var(--green); border-color:#d8e0d3; background:#EFF3EC; }
-
-  .candidate-card{
-    margin:6px 16px 22px; background:var(--card); border:1px solid var(--line);
-    border-radius:16px; padding:15px; box-shadow:var(--shadow);
-  }
-  .candidate-card h3{ margin:0 0 4px; font-size:15px; }
-  .candidate-card p.hint{ font-size:12px; color:var(--ink-soft); margin:0 0 10px; }
-  .candidate-list{ display:flex; flex-wrap:wrap; gap:8px; }
-  .candidate-list a{
-    font-size:12.5px; text-decoration:none; color:var(--ink);
-    background:var(--paper-2); border:1px solid var(--line);
-    padding:7px 12px; border-radius:999px; font-weight:600;
+  .hotel-banner .ic { font-size: 24px; }
+  .hotel-banner .txt { flex: 1; font-size: 14px; font-weight: 700; color: #8A5F20; }
+  .hotel-banner a { 
+    color: #FFF; background: #D19142; padding: 6px 14px; border-radius: 20px;
+    text-decoration: none; font-size: 13px; font-weight: 700; white-space: nowrap;
+    box-shadow: 0 2px 6px rgba(209,145,66,0.3);
   }
 
-  /* ---------- CONVERT ---------- */
-  #view-convert .inner{ padding:18px 16px 24px; }
-  .section-title{ margin:0 0 4px; font-size:20px; }
-  .section-sub{ font-size:12.5px; color:var(--ink-soft); margin:0 0 16px; }
-  .conv-card{
-    background:var(--card); border:1px solid var(--line); border-radius:18px;
-    padding:18px; box-shadow:var(--shadow); margin-bottom:16px;
+  .timeline { position: relative; padding-left: 2px; }
+  .item { position: relative; display: flex; gap: 16px; padding: 0 0 28px 0; }
+  .item::before {
+    content: ""; position: absolute; left: 19px; top: 40px; bottom: -2px; width: 2px;
+    background: var(--line); border-radius: 2px;
   }
-  .conv-card h3{ font-size:14.5px; margin:0 0 14px; display:flex; align-items:center; gap:6px; }
-  .conv-row{ margin-bottom:14px; }
-  .conv-row label{ font-size:12.5px; color:var(--ink-soft); display:block; margin-bottom:6px; }
-  .conv-input-wrap{ display:flex; align-items:stretch; border:1px solid var(--line); border-radius:12px; overflow:hidden; background:var(--paper); }
-  .conv-input-wrap span{ padding:0 12px; font-size:14px; color:var(--ink-soft); background:var(--paper-2); display:flex; align-items:center; font-weight:700; }
-  .conv-input-wrap input{
-    flex:1; border:none; padding:13px 12px; font-size:19px; font-family:inherit;
-    background:transparent; color:var(--ink); font-weight:700; min-width:0;
+  .item:last-child::before { display: none; }
+  .item .badge {
+    flex: 0 0 40px; height: 40px; border-radius: 12px;
+    background: #FFF; border: 2px solid var(--line);
+    display: flex; align-items: center; justify-content: center; font-size: 20px;
+    z-index: 1; box-shadow: 0 4px 10px rgba(0,0,0,0.04);
   }
-  .conv-input-wrap input:focus{ outline:none; }
-  .conv-swap{ text-align:center; color:var(--accent-2); font-size:13px; margin:2px 0 12px; }
-
-  .rate-row{ display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--ink-soft); flex-wrap:wrap; margin-bottom:10px;}
-  .rate-row input{ width:100px; padding:7px 8px; border-radius:8px; border:1px solid var(--line); font-family:inherit; font-size:13px; font-weight:700; }
-  .rate-source{ font-size:11.5px; }
-  .rate-source a{ color:var(--blue); }
-
-  .toggle-row{ display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:14px; }
-  .toggle-row .lbl{ font-size:13.5px; font-weight:500; }
-  .toggle-row .lbl small{ display:block; font-size:11px; color:var(--ink-soft); font-weight:400; margin-top:2px; }
-  .switch{ position:relative; width:44px; height:26px; flex:0 0 44px; }
-  .switch input{ opacity:0; width:0; height:0; }
-  .switch .slider{ position:absolute; inset:0; background:#DCD3BC; border-radius:999px; transition:.2s; cursor:pointer; }
-  .switch .slider::before{ content:""; position:absolute; width:20px; height:20px; left:3px; top:3px; background:#fff; border-radius:50%; transition:.2s; box-shadow:0 1px 3px rgba(0,0,0,.25); }
-  .switch input:checked + .slider{ background:var(--accent); }
-  .switch input:checked + .slider::before{ transform:translateX(18px); }
-
-  .pct-row{ display:flex; gap:10px; margin-bottom:6px; }
-  .pct-field{ flex:1; }
-  .pct-field label{ font-size:12px; color:var(--ink-soft); display:block; margin-bottom:6px; }
-  .pct-input-wrap{ display:flex; align-items:center; border:1px solid var(--line); border-radius:12px; overflow:hidden; background:var(--paper); }
-  .pct-input-wrap input{ flex:1; border:none; padding:11px 10px; font-size:15px; font-family:inherit; background:transparent; color:var(--ink); font-weight:700; min-width:0; }
-  .pct-input-wrap input:focus{ outline:none; }
-  .pct-input-wrap span{ padding:0 10px; color:var(--ink-soft); font-size:13px; }
-  .pct-presets{ display:flex; gap:6px; flex-wrap:wrap; margin:8px 0 4px; }
-  .pct-presets button{
-    border:1px solid var(--line); background:var(--paper-2); color:var(--ink-soft);
-    font-size:12px; padding:5px 10px; border-radius:999px; font-family:inherit; cursor:pointer; font-weight:600;
+  .item .body { flex: 1; padding-top: 2px; }
+  .item .time { font-size: 13px; color: var(--accent); font-weight: 800; letter-spacing: 0.04em; margin-bottom: 4px; }
+  .item .name { font-size: 17px; font-weight: 800; margin: 0 0 6px; color: var(--ink); line-height: 1.4; }
+  .item .note { font-size: 14px; color: var(--ink-soft); margin: 0 0 10px; line-height: 1.5; font-weight: 500; }
+  .item .note.warn { color: var(--accent); background: #FFF1EE; padding: 6px 10px; border-radius: 8px; display: inline-block;}
+  .item .links { display: flex; gap: 10px; flex-wrap: wrap; }
+  .item .links a {
+    font-size: 13px; text-decoration: none; color: var(--ink);
+    background: #FFF; border: 1px solid var(--line);
+    padding: 6px 14px; border-radius: 20px; font-weight: 700;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.03); display: flex; align-items: center; gap: 4px;
   }
-  .pct-presets button.active{ background:var(--accent); border-color:var(--accent); color:#fff; }
+  .item .links a.map-link { color: var(--blue); border-color: #CBD5E1; background: #F1F5F9; }
+  .item .links a.off-link { color: var(--green); border-color: #C6F6D5; background: #F0FFF4; }
 
-  .result-box{
-    margin-top:6px; background:linear-gradient(135deg,#F3ECDC,#EFE6D2); border-radius:14px; padding:14px 15px;
-    border:1px solid var(--line);
+  .candidate-card {
+    margin: 10px 20px 30px; background: var(--card); border: 1px solid var(--line);
+    border-radius: 20px; padding: 20px; box-shadow: var(--shadow);
   }
-  .result-box .row{ display:flex; justify-content:space-between; font-size:12.5px; color:var(--ink-soft); padding:3px 0; }
-  .result-box .row.final{ font-size:16px; font-weight:800; color:var(--ink); border-top:1px dashed #D8CBA6; margin-top:6px; padding-top:9px; }
-  .conv-note{ font-size:11.5px; color:var(--ink-soft); line-height:1.6; }
+  .candidate-card h3 { margin: 0 0 8px; font-size: 16px; font-weight: 800; }
+  .candidate-card p.hint { font-size: 14px; color: var(--ink-soft); margin: 0 0 14px; }
+  .candidate-list { display: flex; flex-wrap: wrap; gap: 10px; }
+  .candidate-list a {
+    font-size: 13px; text-decoration: none; color: var(--ink);
+    background: var(--paper-2); padding: 8px 16px; border-radius: 20px; font-weight: 700;
+    transition: 0.2s; border: 1px solid transparent;
+  }
+  .candidate-list a:active { background: #E2E8F0; }
+
+  /* ---------- CONVERT & PHRASE GENERAL ---------- */
+  .inner { padding: 28px 20px 40px; }
+  .section-title { margin: 0 0 6px; font-size: 24px; font-weight: 900; }
+  .section-sub { font-size: 14px; color: var(--ink-soft); margin: 0 0 24px; font-weight: 500; }
+  
+  .conv-card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 24px;
+    padding: 24px 20px; box-shadow: var(--shadow); margin-bottom: 20px;
+  }
+  .conv-card h3 { font-size: 17px; margin: 0 0 20px; display: flex; align-items: center; gap: 8px; font-weight: 800; }
+  .conv-row { margin-bottom: 18px; }
+  .conv-row label { font-size: 14px; color: var(--ink-soft); display: block; margin-bottom: 8px; font-weight: 600; }
+  
+  .conv-input-wrap { 
+    display: flex; align-items: stretch; border: 2px solid var(--line); 
+    border-radius: 16px; overflow: hidden; background: #FFF; transition: 0.2s;
+  }
+  .conv-input-wrap:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(226,91,54,0.15); }
+  .conv-input-wrap span { 
+    padding: 0 16px; font-size: 16px; color: var(--ink-soft); 
+    background: var(--paper-2); display: flex; align-items: center; font-weight: 800; 
+  }
+  .conv-input-wrap input {
+    flex: 1; border: none; padding: 16px; font-size: 22px; font-family: inherit;
+    background: transparent; color: var(--ink); font-weight: 800; min-width: 0;
+  }
+  .conv-input-wrap input:focus { outline: none; }
+  .conv-swap { text-align: center; color: var(--accent-2); font-size: 18px; margin: 4px 0 16px; font-weight: 800; }
+
+  .rate-row { 
+    display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--ink-soft); 
+    flex-wrap: wrap; margin-bottom: 12px; font-weight: 600; background: #F8F9FA; padding: 12px; border-radius: 12px;
+  }
+  .rate-row input { 
+    width: 100px; padding: 8px 10px; border-radius: 8px; border: 2px solid var(--line); 
+    font-family: inherit; font-size: 15px; font-weight: 800; text-align: center; color: var(--blue);
+  }
+  .rate-source { font-size: 12px; color: #8BA0B8; font-weight: 500;}
+  .rate-source a { color: var(--blue); font-weight: 600; }
+  .live-tag { background: #48BB78; color: #FFF; padding: 2px 6px; border-radius: 6px; font-size: 10px; font-weight: 800; margin-left: 6px; animation: pulse 2s infinite;}
+  @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.6; } 100% { opacity: 1; } }
+
+  .toggle-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 20px; }
+  .toggle-row .lbl { font-size: 15px; font-weight: 700; color: var(--ink); }
+  .toggle-row .lbl small { display: block; font-size: 12px; color: var(--ink-soft); font-weight: 500; margin-top: 4px; }
+  .switch { position: relative; width: 52px; height: 30px; flex: 0 0 52px; }
+  .switch input { opacity: 0; width: 0; height: 0; }
+  .switch .slider { position: absolute; inset: 0; background: #CBD5E1; border-radius: 999px; transition: .3s; cursor: pointer; }
+  .switch .slider::before { content: ""; position: absolute; width: 24px; height: 24px; left: 3px; top: 3px; background: #FFF; border-radius: 50%; transition: .3s; box-shadow: 0 2px 5px rgba(0,0,0,.2); }
+  .switch input:checked + .slider { background: var(--accent); }
+  .switch input:checked + .slider::before { transform: translateX(22px); }
+
+  .pct-row { display: flex; gap: 12px; margin-bottom: 12px; }
+  .pct-field { flex: 1; }
+  .pct-field label { font-size: 14px; color: var(--ink-soft); display: block; margin-bottom: 8px; font-weight: 600; }
+  .pct-input-wrap { 
+    display: flex; align-items: center; border: 2px solid var(--line); 
+    border-radius: 12px; overflow: hidden; background: #FFF; transition: 0.2s;
+  }
+  .pct-input-wrap:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(226,91,54,0.15); }
+  .pct-input-wrap input { 
+    flex: 1; border: none; padding: 12px 14px; font-size: 18px; font-family: inherit; 
+    background: transparent; color: var(--ink); font-weight: 800; min-width: 0; 
+  }
+  .pct-input-wrap input:focus { outline: none; }
+  .pct-input-wrap span { padding: 0 14px; color: var(--ink-soft); font-size: 15px; font-weight: 800; background: var(--paper-2); height: 100%; display: flex; align-items: center;}
+  
+  .pct-presets { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0 8px; }
+  .pct-presets button {
+    border: 2px solid var(--line); background: #FFF; color: var(--ink-soft);
+    font-size: 13px; padding: 6px 14px; border-radius: 20px; font-family: inherit; 
+    cursor: pointer; font-weight: 700; transition: 0.2s;
+  }
+  .pct-presets button.active { background: #FFF1EE; border-color: var(--accent); color: var(--accent); }
+
+  .result-box {
+    margin-top: 10px; background: linear-gradient(135deg, #2C3E50, #1A2536); 
+    border-radius: 20px; padding: 20px 24px; color: #FFF;
+    box-shadow: 0 12px 24px rgba(26,37,54,0.25);
+  }
+  .result-box .row { display: flex; justify-content: space-between; font-size: 14px; color: #94A3B8; padding: 6px 0; font-weight: 600; }
+  .result-box .row span:last-child { color: #E2E8F0; }
+  .result-box .row.final { 
+    font-size: 20px; font-weight: 900; color: #FFF; 
+    border-top: 1px dashed rgba(255,255,255,0.2); margin-top: 10px; padding-top: 16px; 
+  }
+  .result-box .row.final span:last-child { color: #F6AD55; font-size: 24px; }
+  .conv-note { font-size: 13px; color: #8BA0B8; line-height: 1.6; font-weight: 500; text-align: center; }
 
   /* ---------- PHRASEBOOK ---------- */
-  #view-phrase .inner{ padding:18px 16px 24px; }
-  .phrase-tabs{ display:flex; gap:8px; overflow-x:auto; margin-bottom:14px; -webkit-overflow-scrolling:touch; scrollbar-width:none;}
-  .phrase-tabs::-webkit-scrollbar{display:none;}
-  .phrase-tab{
-    flex:0 0 auto; padding:8px 14px; border-radius:999px; border:1px solid var(--line);
-    background:var(--card); color:var(--ink-soft); font-size:13px; font-weight:600; cursor:pointer;
+  .phrase-tabs { 
+    display: flex; gap: 10px; overflow-x: auto; margin-bottom: 20px; 
+    -webkit-overflow-scrolling: touch; scrollbar-width: none; padding-bottom: 4px;
   }
-  .phrase-tab.active{ background:var(--ink); border-color:var(--ink); color:#F4EFE2; }
-  .phrase-card{
-    background:var(--card); border:1px solid var(--line); border-radius:16px;
-    padding:14px 15px; margin-bottom:10px; box-shadow:var(--shadow);
-    display:flex; align-items:center; gap:12px;
+  .phrase-tabs::-webkit-scrollbar { display: none; }
+  .phrase-tab {
+    flex: 0 0 auto; padding: 10px 20px; border-radius: 12px; border: 2px solid var(--line);
+    background: #FFF; color: var(--ink-soft); font-size: 15px; font-weight: 700; 
+    cursor: pointer; transition: 0.2s;
   }
-  .phrase-card .txt{ flex:1; }
-  .phrase-card .ja{ font-size:17px; font-weight:700; margin:0 0 3px; }
-  .phrase-card .kana{ font-size:12px; color:var(--accent-2); margin:0 0 3px; }
-  .phrase-card .zh{ font-size:12.5px; color:var(--ink-soft); margin:0; }
-  .speak-btn{
-    flex:0 0 46px; height:46px; border-radius:50%; border:none;
-    background:var(--accent); color:#fff; font-size:19px; cursor:pointer;
-    display:flex; align-items:center; justify-content:center;
-    box-shadow:0 4px 10px rgba(193,68,14,0.35);
+  .phrase-tab.active { background: var(--ink); border-color: var(--ink); color: #FFF; box-shadow: 0 4px 12px rgba(31,42,61,0.2); }
+  
+  .phrase-card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 20px;
+    padding: 18px 20px; margin-bottom: 16px; box-shadow: var(--shadow);
+    display: flex; align-items: center; gap: 16px; cursor: pointer; transition: 0.2s;
   }
-  .speak-btn.playing{ background:var(--accent-2); }
-  .phrase-note{ font-size:11.5px; color:var(--ink-soft); margin-top:6px; line-height:1.6; }
+  .phrase-card:active { transform: scale(0.98); }
+  .phrase-card .txt { flex: 1; }
+  .phrase-card .ja { font-size: 20px; font-weight: 800; margin: 0 0 6px; color: var(--ink); letter-spacing: 0.02em;}
+  .phrase-card .kana { font-size: 13px; color: var(--accent-2); margin: 0 0 6px; font-weight: 600; font-family: monospace; }
+  .phrase-card .zh { font-size: 15px; color: var(--ink-soft); margin: 0; font-weight: 500; }
+  
+  .speak-btn {
+    flex: 0 0 52px; height: 52px; border-radius: 50%; border: none;
+    background: #FFF1EE; color: var(--accent); font-size: 24px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 12px rgba(226,91,54,0.15); transition: 0.2s;
+  }
+  .speak-btn.playing { background: var(--accent); color: #FFF; transform: scale(1.1); box-shadow: 0 8px 20px rgba(226,91,54,0.3); }
+  .phrase-note { font-size: 13px; color: #8BA0B8; margin-top: 20px; line-height: 1.6; font-weight: 500; text-align: center; }
+
+  /* ---------- FLASHCARD MODAL ---------- */
+  #flashcard-modal {
+    position: fixed; inset: 0; background: rgba(31,42,61,0.95); z-index: 100;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 30px; opacity: 0; pointer-events: none; transition: 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  }
+  #flashcard-modal.show { opacity: 1; pointer-events: auto; }
+  .fc-content { text-align: center; max-width: 90vw; }
+  .fc-ja { font-size: 10vw; font-weight: 900; color: #FFF; margin: 0 0 20px; line-height: 1.3; text-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+  @media(min-width: 600px) { .fc-ja { font-size: 60px; } }
+  .fc-kana { font-size: 20px; color: #F0C48D; margin: 0 0 20px; font-weight: 600; font-family: monospace; }
+  .fc-zh { font-size: 24px; color: #A0ABC0; margin: 0; font-weight: 500; }
+  .fc-close {
+    position: absolute; top: 40px; right: 30px; background: rgba(255,255,255,0.2);
+    border: none; color: #FFF; width: 44px; height: 44px; border-radius: 50%;
+    font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+  }
 </style>
 </head>
 <body>
@@ -297,62 +350,65 @@
 <section id="view-convert" class="view">
   <div class="inner">
     <h2 class="serif section-title">日圓／台幣 換算</h2>
-    <p class="section-sub">含刷卡手續費、退稅、優惠券折扣的購物實付估算</p>
+    <p class="section-sub">即時抓取匯率，或自訂計算</p>
 
+    <!-- 將快速換算移到上方 -->
+    <div class="conv-card">
+      <h3>💱 快速雙向換算</h3>
+      <div class="conv-row">
+        <label>日圓 JPY</label>
+        <div class="conv-input-wrap"><span>¥</span><input type="number" id="jpy-input" inputmode="decimal" pattern="[0-9]*" placeholder="0"></div>
+      </div>
+      <div class="conv-swap">↕ 使用下方同一組匯率</div>
+      <div class="conv-row">
+        <label>台幣 TWD</label>
+        <div class="conv-input-wrap"><span>NT$</span><input type="number" id="twd-input" inputmode="decimal" pattern="[0-9]*" placeholder="0"></div>
+      </div>
+    </div>
+
+    <!-- 購物實付估算移到下方 -->
     <div class="conv-card">
       <h3>🛍️ 購物實付估算</h3>
       <div class="conv-row">
         <label>商品標價（日圓）</label>
         <div class="conv-input-wrap">
           <span>¥</span>
-          <input type="number" id="shop-jpy" inputmode="decimal" placeholder="0">
+          <input type="number" id="shop-jpy" inputmode="decimal" pattern="[0-9]*" placeholder="0">
         </div>
       </div>
 
       <div class="pct-row">
         <div class="pct-field">
           <label>優惠券折扣</label>
-          <div class="pct-input-wrap"><input type="number" id="discount-pct" value="0" min="0" max="100" step="1"><span>%</span></div>
+          <div class="pct-input-wrap"><input type="number" id="discount-pct" value="0" min="0" max="100" step="1" inputmode="decimal" pattern="[0-9]*"><span>%</span></div>
         </div>
         <div class="pct-field">
           <label>退稅</label>
-          <div class="pct-input-wrap"><input type="number" id="taxrefund-pct" value="0" min="0" max="100" step="0.5"><span>%</span></div>
+          <div class="pct-input-wrap"><input type="number" id="taxrefund-pct" value="0" min="0" max="100" step="0.5" inputmode="decimal" pattern="[0-9]*"><span>%</span></div>
           <div class="pct-presets" id="refund-presets"></div>
         </div>
       </div>
 
       <div class="toggle-row">
         <div class="lbl">海外刷卡手續費<small>預設 1.5%，未勾選則不計入</small></div>
-        <label class="switch"><input type="checkbox" id="fee-toggle"><span class="slider"></span></label>
+        <label class="switch"><input type="checkbox" id="fee-toggle" checked><span class="slider"></span></label>
       </div>
 
       <div class="rate-row">
-        匯率：1 JPY = <input type="number" id="rate-input" step="0.00000001" value="0.20479725"> TWD
+        匯率：1 JPY = <input type="number" id="rate-input" step="0.0001" value="0.2100" inputmode="decimal"> TWD
+        <span class="live-tag" id="live-tag">自動更新中...</span>
       </div>
-      <p class="rate-source">資料來源：<a href="https://www.twrates.com/card/visa/jpy.html" target="_blank" rel="noopener">twrates.com（VISA 日圓/台幣，2026-09-08）</a>，可自行更改為出發前查到的最新匯率</p>
+      <p class="rate-source">當日參考匯率，打開網頁時會自動抓取最新市場匯率（您也可以手動更改）。</p>
 
       <div class="result-box">
         <div class="row"><span>折扣後金額</span><span id="r-after-discount">¥0</span></div>
         <div class="row"><span>退稅後實付（日圓）</span><span id="r-after-refund">¥0</span></div>
         <div class="row"><span>刷卡手續費</span><span id="r-fee">＋NT$0</span></div>
-        <div class="row final"><span>台幣實付金額</span><span id="r-final">NT$0</span></div>
+        <div class="row final"><span>台幣實付金額估算</span><span id="r-final">NT$0</span></div>
       </div>
     </div>
-
-    <div class="conv-card">
-      <h3>💱 快速雙向換算</h3>
-      <div class="conv-row">
-        <label>日圓 JPY</label>
-        <div class="conv-input-wrap"><span>¥</span><input type="number" id="jpy-input" inputmode="decimal" placeholder="0"></div>
-      </div>
-      <div class="conv-swap">↕ 使用上方同一組匯率</div>
-      <div class="conv-row">
-        <label>台幣 TWD</label>
-        <div class="conv-input-wrap"><span>NT$</span><input type="number" id="twd-input" inputmode="decimal" placeholder="0"></div>
-      </div>
-    </div>
-
-    <p class="conv-note">匯率每日變動，出發前建議至 twrates.com 或銀行 App 再次確認當日匯率；此頁計算結果僅供旅途中概略估算參考。</p>
+    
+    <p class="conv-note">匯率每日變動，出發前建議至銀行 App 再次確認當日匯率；此頁計算結果僅供旅途中概略估算參考。</p>
   </div>
 </section>
 
@@ -360,18 +416,34 @@
 <section id="view-phrase" class="view">
   <div class="inner">
     <h2 class="serif section-title">日文萬用句</h2>
-    <p class="section-sub">按 🔊 按鈕就會唸出日文發音</p>
+    <p class="section-sub">點擊卡片可放大顯示，按 🔊 播放日文發音</p>
     <div class="phrase-tabs" id="phrase-tabs"></div>
     <div id="phrase-list"></div>
-    <p class="phrase-note">發音使用手機瀏覽器內建的語音合成功能，效果會依裝置與是否安裝日文語音包而不同；若沒有聲音，可到手機設定安裝日文語音。</p>
+    <p class="phrase-note">發音使用手機瀏覽器內建的語音合成功能；若沒有聲音，可到手機設定安裝日文語音。</p>
   </div>
 </section>
 
 <nav class="bottom-nav">
-  <button class="nav-btn active" data-view="itinerary"><span class="ic">🗺️</span>行程</button>
-  <button class="nav-btn" data-view="convert"><span class="ic">💴</span>換算</button>
-  <button class="nav-btn" data-view="phrase"><span class="ic">🗣️</span>日文</button>
+  <button class="nav-btn active" data-view="itinerary">
+    <span class="ic">🗺️</span>行程
+  </button>
+  <button class="nav-btn" data-view="convert">
+    <span class="ic">💱</span>換算
+  </button>
+  <button class="nav-btn" data-view="phrase">
+    <span class="ic">🗣️</span>日文
+  </button>
 </nav>
+
+<!-- ===================== FLASHCARD MODAL ===================== -->
+<div id="flashcard-modal">
+  <button class="fc-close" id="fc-close">✕</button>
+  <div class="fc-content">
+    <div class="fc-ja" id="fc-ja"></div>
+    <div class="fc-kana" id="fc-kana"></div>
+    <div class="fc-zh" id="fc-zh"></div>
+  </div>
+</div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 <script>
@@ -383,103 +455,111 @@ function mapsLink(q){
 /* ============ trip data ============ */
 const days = [
   {
-    date:"10/2", wk:"五", title:"高雄集合 → 成田入境", hotel:{name:"ホテルアマネク浅草駅前", official:"https://amanekhotels.jp/asakusa/", mapQuery:"ホテルアマネク浅草駅前"},
+    date:"10/2", wk:"五", title:"高雄出發 → 成田 → 淺草", hotel:{name:"ホテルアマネク浅草駅前", official:"https://amanekhotels.jp/asakusa/", mapQuery:"ホテルアマネク浅草駅前"},
     items:[
       {time:"11:00", icon:"🧳", name:"高雄小港國際機場集合", mapQuery:"高雄國際機場"},
+      {time:"11:30", icon:"🍽️", name:"南苑貴賓室 (享用美味午餐)", mapQuery:"高雄機場 南苑貴賓室"},
       {time:"14:00", icon:"✈️", name:"高雄小港國際機場起飛", note:"捷星航空 GK018", mapQuery:"高雄國際機場"},
-      {time:"18:30", icon:"🛬", name:"成田國際機場 第3航廈", note:"抵達日本", mapQuery:"成田国際空港 第3ターミナル", big:{lat:35.7719,lng:140.3929}},
-      {time:"19:00", icon:"🚈", name:"京成本線 Access Express", note:"轉乘往市區", mapQuery:"京成本線 成田空港駅"},
-      {time:"20:08", icon:"🚈", name:"京成成田 SKYACCESS", mapQuery:"京成上野駅"},
+      {time:"18:30", icon:"🛬", name:"成田國際機場 第3航廈", mapQuery:"成田国際空港 第3ターミナル", big:{lat:35.7719,lng:140.3929}},
+      {time:"19:00", icon:"🚈", name:"京成本線 Access Express", mapQuery:"京成本線"},
+      {time:"20:08", icon:"🚈", name:"京成成田 SKYACCESS", mapQuery:"京成成田"},
       {icon:"🏨", name:"住宿：ホテルアマネク浅草駅前", official:"https://amanekhotels.jp/asakusa/", mapQuery:"ホテルアマネク浅草駅前", big:{lat:35.7108,lng:139.7963}},
-      {time:"22:00", icon:"🍢", name:"烤肉鶯谷園", link:"https://tabelog.com/tokyo/A1311/A131104/13012243/dtlrvwlst/", mapQuery:"鶯谷園 東京"}
+      {time:"晚餐", icon:"🍜", name:"拉麵", mapQuery:"浅草 拉麵"}
     ]
   },
   {
     date:"10/3", wk:"六", title:"淺草・三鷹・上野", hotel:{name:"ホテルアマネク浅草駅前", mapQuery:"ホテルアマネク浅草駅前"},
     items:[
-      {time:"10:30", icon:"⛩️", name:"淺草寺・淺草仲見世商店街", official:"https://www.senso-ji.jp/", mapQuery:"浅草寺", big:{lat:35.7148,lng:139.7967}},
+      {time:"10:30", icon:"⛩️", name:"淺草寺、淺草仲見世商店街", mapQuery:"浅草寺", big:{lat:35.7148,lng:139.7967}},
       {time:"午餐", icon:"🍲", name:"今半別館", official:"http://www.asakusa-imahan.co.jp/", mapQuery:"今半別館 浅草"},
-      {time:"14:00", icon:"🎬", name:"三鷹之森吉卜力美術館", note:"⚠️ 需事先於官網預約入場日期時段", official:"https://www.ghibli-museum.jp/top.html", mapQuery:"三鷹の森ジブリ美術館", big:{lat:35.6960,lng:139.5704}},
-      {time:"16:00", icon:"🌳", name:"上野公園・不忍池", official:"https://www.tokyo-park.or.jp/park/ueno/index.html", mapQuery:"上野恩賜公園 不忍池", big:{lat:35.7141,lng:139.7744}},
-      {icon:"🛍️", name:"阿美橫町", official:"https://www.ameyoko.net/", mapQuery:"アメ横商店街", big:{lat:35.7098,lng:139.7745}},
+      {time:"14:00", icon:"🎬", name:"三鷹之森吉卜力美術館", mapQuery:"三鷹の森ジブリ美術館", big:{lat:35.6960,lng:139.5704}},
+      {time:"16:00", icon:"🌳", name:"上野公園 不忍池", mapQuery:"上野恩賜公園 不忍池"},
+      {icon:"🛍️", name:"阿美橫町", mapQuery:"アメ横商店街", big:{lat:35.7098,lng:139.7745}},
       {time:"晚餐", icon:"🍽️", name:"肉の大山 上野店", official:"https://www.ohyama.com/ueno", mapQuery:"肉の大山 上野店"},
-      {icon:"🌙", name:"晚間自由活動", note:"時間待定", mapQuery:"浅草"},
-      {icon:"🏨", name:"住宿：同上（ホテルアマネク浅草駅前）", mapQuery:"ホテルアマネク浅草駅前"}
+      {icon:"🌙", name:"晚間自由行動 (日本人)", mapQuery:"上野"},
+      {icon:"🏨", name:"住宿：同上", mapQuery:"ホテルアマネク浅草駅前"}
     ]
   },
   {
-    date:"10/4", wk:"日", title:"皇居・銀座・橫濱一日遊", hotel:{name:"ホテルアマネク浅草駅前", mapQuery:"ホテルアマネク浅草駅前"},
+    date:"10/4", wk:"日", title:"川越 小江戶一日遊", hotel:{name:"ホテルアマネク浅草駅前", mapQuery:"ホテルアマネク浅草駅前"},
     items:[
-      {time:"10:00", icon:"🏯", name:"皇居（東御苑）", official:"https://www.kunaicho.go.jp/visit/higashigyoen/index.html", mapQuery:"皇居東御苑", big:{lat:35.6852,lng:139.7528}},
-      {icon:"🛍️", name:"銀座", mapQuery:"銀座 東京", big:{lat:35.6717,lng:139.7650}},
-      {time:"12:00", icon:"🍽️", name:"午餐", note:"店家待定", mapQuery:"銀座 午餐"},
-      {time:"14:00", icon:"🍣", name:"橫濱：吃壽司", note:"店家待定", mapQuery:"横浜 寿司"},
-      {icon:"🌊", name:"橫濱山下公園", mapQuery:"横浜山下公園", big:{lat:35.4437,lng:139.6503}},
-      {icon:"🧱", name:"橫濱紅磚倉庫", official:"https://www.yokohama-akarenga.jp/", mapQuery:"横浜赤レンガ倉庫", big:{lat:35.4534,lng:139.6428}},
-      {icon:"🥟", name:"橫濱中華街", mapQuery:"横浜中華街", big:{lat:35.4437,lng:139.6455}},
-      {icon:"🧸", name:"橫濱麵包超人兒童博物館", official:"https://www.yokohama-anpanman.jp/", mapQuery:"横浜アンパンマンこどもミュージアム", big:{lat:35.4586,lng:139.6328}},
-      {icon:"🎡", name:"橫濱港未來21", mapQuery:"横浜みなとみらい21", big:{lat:35.4567,lng:139.6329}},
-      {icon:"🍜", name:"新橫濱拉麵博物館", official:"https://www.raumen.co.jp/", mapQuery:"新横浜ラーメン博物館", big:{lat:35.5079,lng:139.6172}},
-      {icon:"🌙", name:"晚間自由活動", note:"時間待定", mapQuery:"横浜"},
-      {time:"晚餐", icon:"🍜", name:"拉麵", note:"店家待定", mapQuery:"東京 拉麵"},
-      {icon:"🏨", name:"住宿：同上（ホテルアマネク浅草駅前）", mapQuery:"ホテルアマネク浅草駅前"}
+      {icon:"⛩️", name:"川越八幡宮", mapQuery:"川越八幡宮", big:{lat:35.9080,lng:139.4850}},
+      {icon:"🏯", name:"仙波東照宮", mapQuery:"仙波東照宮"},
+      {icon:"🛕", name:"喜多院", mapQuery:"川越 喜多院"},
+      {time:"午餐", icon:"🍣", name:"鮨なかの (或鰻魚飯/蕎麥麵)", mapQuery:"鮨なかの 川越"},
+      {icon:"🏘️", name:"大正浪漫夢通", mapQuery:"大正浪漫夢通り"},
+      {icon:"⛩️", name:"川越 熊野神社", mapQuery:"川越熊野神社"},
+      {icon:"🛕", name:"蓮馨寺", mapQuery:"蓮馨寺"},
+      {icon:"🍡", name:"菓子屋橫丁", mapQuery:"菓子屋横丁"},
+      {icon:"🕰️", name:"時之鐘", mapQuery:"時の鐘 川越"},
+      {icon:"🏮", name:"藏造老街", mapQuery:"蔵造りの町並み"},
+      {icon:"⛩️", name:"冰川神社", mapQuery:"川越氷川神社"},
+      {icon:"♨️", name:"小江戶溫泉 KASHIBA", mapQuery:"小江戸温泉 KASHIBA"},
+      {icon:"🌙", name:"晚間自由行動", mapQuery:"川越"},
+      {time:"晚餐", icon:"🍜", name:"拉麵", mapQuery:"拉麵"},
+      {icon:"🏨", name:"住宿：同上", mapQuery:"ホテルアマネク浅草駅前"}
     ]
   },
   {
-    date:"10/5", wk:"一", title:"池袋／秋葉原 → 富士河口湖", hotel:{name:"HAOSTAY（河口湖）", official:"https://www.haostay.jp/", mapQuery:"HAOSTAY 河口湖"},
+    date:"10/5", wk:"一", title:"東京前往富士河口湖", hotel:{name:"HAOSTAY", official:"https://www.haostay.jp/", mapQuery:"HAOSTAY 河口湖"},
     items:[
-      {icon:"🚉", name:"河口湖站", mapQuery:"河口湖駅", big:{lat:35.5013,lng:138.7472}},
-      {icon:"📷", name:"友都八喜 池袋店（新開幕）", official:"https://www.yodobashi.com/ec/store/0016/", mapQuery:"ヨドバシカメラ マルチメディア池袋", big:{lat:35.7295,lng:139.7109}},
-      {icon:"🛍️", name:"池袋PARCO", official:"https://ikebukuro.parco.jp/", mapQuery:"池袋PARCO"},
-      {icon:"🎮", name:"寶可夢中心 MEGA TOKYO", note:"⚠️ 2026年3月起臨時休業中，出發前請至官網確認是否已重新開放", official:"https://sunshinecity.jp/shop/shop_list/entry-584.html", mapQuery:"ポケモンセンターメガトウキョー"},
-      {icon:"🔀", name:"（或）秋葉原", mapQuery:"秋葉原", big:{lat:35.6984,lng:139.7731}},
-      {icon:"🏪", name:"LAWSON", mapQuery:"ローソン 東京"},
-      {time:"午餐", icon:"🍜", name:"饃饃", mapQuery:"河口湖 饃饃"},
+      {time:"08:30", icon:"🚶", name:"離開飯店", mapQuery:"ホテルアマネク浅草駅前"},
+      {time:"09:20", icon:"🚌", name:"東京站八重洲側 (高速巴士)", link:"https://japanbusonline.com/bus-repo/zh-hant/%E6%9C%AA%E5%88%86%E9%A1%9E/6955/", mapQuery:"東京駅八重洲南口"},
+      {time:"11:20", icon:"🚏", name:"抵達河口湖站", mapQuery:"河口湖駅", big:{lat:35.5013,lng:138.7472}},
+      {time:"午餐", icon:"🍲", name:"ほうとう (餺飥) 不動 河口湖站前店", mapQuery:"ほうとう不動 河口湖駅前店"},
+      {icon:"🚗", name:"租車", mapQuery:"河口湖駅 租車"},
       {icon:"🏪", name:"ローソン富士河口湖町役場前店", mapQuery:"ローソン富士河口湖町役場前店"},
       {icon:"🏪", name:"羅森便利商店 河口湖車站前店", mapQuery:"ローソン河口湖駅前店"},
-      {icon:"🌳", name:"八木崎公園（大草坪）", mapQuery:"八木崎公園 河口湖"},
-      {icon:"🏘️", name:"（遠）西湖 療癒之里 根場", official:"https://saikoiyashinosatonenba.jp/", mapQuery:"西湖いやしの里根場", big:{lat:35.5107,lng:138.6772}},
-      {icon:"🌸", name:"大石公園（花海）", official:"https://www.town.fujikawaguchiko.lg.jp/ka/info.php?if_id=2346", mapQuery:"大石公園 河口湖", big:{lat:35.5254,lng:138.7404}},
-      {icon:"🌾", name:"長崎公園（蘆葦蕩）", mapQuery:"長崎公園 河口湖"},
-      {icon:"🌳", name:"古賀正男紀念公園", mapQuery:"古賀正男記念公園"},
+      {icon:"🌳", name:"八木崎公园的大草坪", mapQuery:"八木崎公園"},
+      {icon:"🏘️", name:"(遠) 西湖 療癒之里 根場", mapQuery:"西湖いやしの里根場", big:{lat:35.5107,lng:138.6772}},
+      {icon:"🌸", name:"大石公园的花海", mapQuery:"大石公園"},
+      {icon:"🌾", name:"长崎公园的芦苇荡", mapQuery:"長崎公園 河口湖"},
+      {icon:"🌳", name:"古贺正男纪念公园", mapQuery:"古賀正男記念公園"},
       {icon:"🏪", name:"ローソン富士河口湖町役場前店", mapQuery:"ローソン富士河口湖町役場前店"},
       {icon:"🏪", name:"羅森便利商店 河口湖車站前店", mapQuery:"ローソン河口湖駅前店"},
       {icon:"⌚", name:"日川時計店", mapQuery:"日川時計店 河口湖"},
-      {icon:"⛩️", name:"新倉山淺間公園、新倉富士淺間神社", note:"忠靈塔展望台觀景點", official:"https://fujiyoshida.net/spot/12", mapQuery:"新倉山浅間公園", big:{lat:35.4890,lng:138.8072}},
-      {icon:"💧", name:"（遠）忍野八海", official:"https://www.vill.oshino.lg.jp/site/kanko/list4-14.html", mapQuery:"忍野八海", big:{lat:35.4534,lng:138.8331}},
-      {icon:"🏞️", name:"（遠）山中湖", mapQuery:"山中湖", big:{lat:35.4167,lng:138.8667}},
-      {icon:"🏨", name:"住宿：HAOSTAY", official:"https://www.haostay.jp/", mapQuery:"HAOSTAY 河口湖"}
+      {icon:"⛩️", name:"新仓山浅间公园、新仓富士浅间神社", mapQuery:"新倉山浅間公園"},
+      {icon:"💧", name:"(遠) 忍野八海", mapQuery:"忍野八海"},
+      {icon:"🏞️", name:"(遠) 山中湖", mapQuery:"山中湖"},
+      {icon:"🍮", name:"木村屋布丁", mapQuery:"木村屋 河口湖"},
+      {time:"晚餐", icon:"🍽️", name:"三笑(日本傳統餐) / Oden(屋台) / 宮本屋(日式豬排飯)", mapQuery:"河口湖 晚餐"},
+      {icon:"🏨", name:"住宿：HAOSTAY", mapQuery:"HAOSTAY 河口湖"}
     ]
   },
   {
-    date:"10/6", wk:"二", title:"河口湖富士山纜車 → 回東京", hotel:{name:"ホテルアマネク浅草駅前（今晚回東京）", mapQuery:"ホテルアマネク浅草駅前"},
+    date:"10/6", wk:"二", title:"富士河口湖 → 東京", hotel:{name:"ホテルアマネク浅草駅前", mapQuery:"ホテルアマネク浅草駅前"},
     items:[
-      {icon:"🚡", name:"河口湖富士山纜車", official:"https://www.mtfujiropeway.jp/", mapQuery:"河口湖 富士山パノラマロープウェイ", big:{lat:35.5065,lng:138.7715}},
-      {time:"午餐", icon:"🍽️", name:"午餐", note:"店家待定", mapQuery:"河口湖 午餐"},
-      {time:"晚餐", icon:"🍜", name:"拉麵", note:"店家待定", mapQuery:"東京 拉麵"},
-      {icon:"🏨", name:"住宿：同上（ホテルアマネク浅草駅前）", note:"今晚移動回東京", mapQuery:"ホテルアマネク浅草駅前"}
+      {icon:"🚡", name:"河口湖富士山纜車", mapQuery:"河口湖 富士山パノラマロープウェイ", big:{lat:35.5065,lng:138.7715}},
+      {time:"午餐", icon:"🍽️", name:"午餐", mapQuery:"河口湖 午餐"},
+      {time:"晚餐", icon:"🍜", name:"拉麵", mapQuery:"東京 拉麵"},
+      {icon:"🌙", name:"日本人", mapQuery:"東京"},
+      {icon:"🏨", name:"住宿：ホテルアマネク浅草駅前", mapQuery:"ホテルアマネク浅草駅前"}
     ]
   },
   {
     date:"10/7", wk:"三", title:"東京鐵塔・麻布台・澀谷", hotel:{name:"ホテルアマネク浅草駅前", mapQuery:"ホテルアマネク浅草駅前"},
     items:[
-      {icon:"🗼", name:"東京鐵塔", official:"https://www.tokyotower.co.jp/", mapQuery:"東京タワー", big:{lat:35.6586,lng:139.7454}},
-      {icon:"🏙️", name:"麻布台之丘", official:"https://www.azabudai-hills.com/index.html", mapQuery:"麻布台ヒルズ", big:{lat:35.6640,lng:139.7440}},
-      {icon:"🌳", name:"芝公園", mapQuery:"芝公園 東京", big:{lat:35.6557,lng:139.7488}},
-      {time:"午餐", icon:"🍲", name:"SUKIYAKI 六松", note:"位於六本木；原文備註「附中文」，可能指有中文菜單或服務，建議現場再次確認", official:"https://sukiyaki-rokumatsu.com/roppongi/", mapQuery:"SUKIYAKI 六松 六本木"},
-      {icon:"🚦", name:"澀谷十字路口", mapQuery:"渋谷スクランブル交差点", big:{lat:35.6595,lng:139.7004}},
-      {icon:"🌆", name:"澀谷SKY", official:"https://www.shibuya-scramble-square.com/sky/", mapQuery:"SHIBUYA SKY", big:{lat:35.6580,lng:139.7016}},
-      {time:"晚餐", icon:"🍜", name:"拉麵", note:"店家待定", mapQuery:"東京 拉麵"},
-      {icon:"🏨", name:"住宿：同上（ホテルアマネク浅草駅前）", mapQuery:"ホテルアマネク浅草駅前"}
+      {icon:"🗼", name:"東京鐵塔", mapQuery:"東京タワー", big:{lat:35.6586,lng:139.7454}},
+      {icon:"🏙️", name:"麻布台之丘", mapQuery:"麻布台ヒルズ"},
+      {icon:"🌳", name:"芝公園", mapQuery:"芝公園 東京"},
+      {time:"午餐", icon:"🍲", name:"SUKIYAKI 六松", mapQuery:"SUKIYAKI 六松 六本木"},
+      {icon:"💬", name:"富士灌中文", note:"(原行程備註)"},
+      {icon:"🚦", name:"十字路口 (澀谷)", mapQuery:"渋谷スクランブル交差点"},
+      {time:"16:00", icon:"🌆", name:"澀谷SKY", mapQuery:"SHIBUYA SKY", big:{lat:35.6580,lng:139.7016}},
+      {time:"晚餐", icon:"🥩", name:"烤肉鶯谷園", link:"https://tabelog.com/tokyo/A1311/A131104/13012243/dtlrvwlst/", mapQuery:"鶯谷園 東京"},
+      {icon:"🍜", name:"拉麵", mapQuery:"拉麵"},
+      {icon:"🏨", name:"住宿：同上", mapQuery:"ホテルアマネク浅草駅前"}
     ]
   },
   {
-    date:"10/8", wk:"四", title:"Outlet／東京市區 → 成田", hotel:{name:"アートホテル成田", official:"https://iconia.co.jp/en-us/hotel-art-hotel-narita-chiba", mapQuery:"アートホテル成田"},
+    date:"10/8", wk:"四", title:"皇居・銀座・成田", hotel:{name:"アートホテル成田", mapQuery:"アートホテル成田"},
     items:[
-      {time:"午餐", icon:"🍽️", name:"午餐", note:"店家待定", mapQuery:"東京 午餐"},
-      {icon:"🛍️", name:"Outlet 或 東京市區景點", note:"彈性行程，視前幾天狀況調整", mapQuery:"東京 Outlet"},
-      {time:"晚餐", icon:"🍽️", name:"晚餐", note:"店家待定", mapQuery:"成田 晚餐"},
-      {icon:"🏨", name:"住宿：アートホテル成田", official:"https://iconia.co.jp/en-us/hotel-art-hotel-narita-chiba", mapQuery:"アートホテル成田", big:{lat:35.7762,lng:140.3319}}
+      {time:"10:00", icon:"🏯", name:"皇居", mapQuery:"皇居", big:{lat:35.6852,lng:139.7528}},
+      {icon:"🛍️", name:"銀座", mapQuery:"銀座 東京"},
+      {time:"午餐", icon:"🍽️", name:"にしたに OR 迴轉壽司 OR 拉麵", mapQuery:"銀座 午餐"},
+      {icon:"🛍️", name:"Outlet or 東京景點", mapQuery:"東京 Outlet"},
+      {time:"晚餐", icon:"🍽️", name:"不知道吃什麼", mapQuery:"成田 晚餐"},
+      {icon:"🏨", name:"住宿：アートホテル成田", mapQuery:"アートホテル成田", big:{lat:35.7762,lng:140.3319}}
     ]
   },
   {
@@ -487,7 +567,7 @@ const days = [
     items:[
       {time:"10:30", icon:"🚌", name:"アートホテル成田飯店接駁車出發", mapQuery:"アートホテル成田"},
       {time:"13:55", icon:"🛫", name:"成田國際機場 第2航廈", note:"AirAsia FD235", mapQuery:"成田国際空港 第2ターミナル", big:{lat:35.7719,lng:140.3929}},
-      {time:"17:05", icon:"🛬", name:"高雄小港國際機場", note:"抵達，行程結束", mapQuery:"高雄國際機場"}
+      {time:"17:05", icon:"🛬", name:"高雄小港國際機場", mapQuery:"高雄國際機場"}
     ]
   }
 ];
@@ -529,7 +609,7 @@ days.forEach((d, i)=>{
   html += '<p class="day-title">'+d.title+'</p>';
 
   if(d.hotel){
-    html += '<div class="hotel-banner"><span class="ic">🏨</span><span class="txt">今晚住宿：'+d.hotel.name+'</span>';
+    html += '<div class="hotel-banner"><span class="ic">🏨</span><div class="txt">今晚住宿：'+d.hotel.name+'</div>';
     html += '<a href="'+mapsLink(d.hotel.mapQuery)+'" target="_blank" rel="noopener">地圖</a></div>';
   }
 
@@ -544,7 +624,7 @@ days.forEach((d, i)=>{
     html += '<div class="links">';
     html += '<a class="map-link" href="'+mapsLink(it.mapQuery)+'" target="_blank" rel="noopener">📍 地圖</a>';
     if(it.official) html += '<a class="off-link" href="'+it.official+'" target="_blank" rel="noopener">🌐 官網</a>';
-    if(it.link) html += '<a class="off-link" href="'+it.link+'" target="_blank" rel="noopener">🔗 介紹頁</a>';
+    if(it.link) html += '<a class="off-link" href="'+it.link+'" target="_blank" rel="noopener">🔗 介紹</a>';
     html += '</div></div></div>';
   });
   html += '</div>';
@@ -563,11 +643,8 @@ function selectDay(i){
 
 /* ============ map ============ */
 function initMap(){
-  map = L.map("overview-map", {zoomControl:true, attributionControl:true});
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom:18,
-    attribution:'&copy; OpenStreetMap contributors'
-  }).addTo(map);
+  map = L.map("overview-map", {zoomControl:false, attributionControl:false});
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom:18 }).addTo(map);
   markerLayer = L.layerGroup().addTo(map);
   renderMapForDay(0);
 }
@@ -583,7 +660,7 @@ function renderMapForDay(i){
   const bounds = [];
   pts.forEach(it=>{
     const m = L.circleMarker([it.big.lat, it.big.lng], {
-      radius:8, color:"#C1440E", weight:2, fillColor:"#C1440E", fillOpacity:0.85
+      radius:9, color:"#FFFFFF", weight:2, fillColor:"#E25B36", fillOpacity:0.9
     }).addTo(markerLayer);
     m.bindPopup('<b>'+it.name+'</b><br><a href="'+mapsLink(it.mapQuery)+'" target="_blank" rel="noopener">在 Google 地圖開啟</a>');
     bounds.push([it.big.lat, it.big.lng]);
@@ -591,10 +668,9 @@ function renderMapForDay(i){
   if(bounds.length===1){
     map.setView(bounds[0], 13);
   } else {
-    map.fitBounds(bounds, {padding:[30,30]});
+    map.fitBounds(bounds, {padding:[40,40]});
   }
 }
-
 initMap();
 
 /* ============ bottom nav ============ */
@@ -605,23 +681,44 @@ navBtns.forEach(btn=>{
     btn.classList.add("active");
     document.querySelectorAll(".view").forEach(v=>v.classList.remove("active"));
     document.getElementById("view-"+btn.dataset.view).classList.add("active");
-    if(btn.dataset.view==="itinerary" && map){ setTimeout(()=>map.invalidateSize(), 80); }
+    if(btn.dataset.view==="itinerary" && map){ setTimeout(()=>map.invalidateSize(), 150); }
   });
 });
+
+/* ============ Auto Fetch Live Exchange Rate ============ */
+const rateInput = document.getElementById("rate-input");
+const liveTag = document.getElementById("live-tag");
+fetch('https://open.er-api.com/v6/latest/JPY')
+  .then(response => response.json())
+  .then(data => {
+    if(data && data.rates && data.rates.TWD) {
+      rateInput.value = data.rates.TWD.toFixed(4);
+      liveTag.textContent = "即時匯率更新成功";
+      liveTag.style.background = "#48BB78";
+      liveTag.style.animation = "none";
+      recalcShop();
+      recalcQuick();
+    }
+  })
+  .catch(err => {
+    liveTag.textContent = "無法抓取匯率，使用預設";
+    liveTag.style.background = "#A0ABC0";
+    liveTag.style.animation = "none";
+  });
+
 
 /* ============ currency: shopping estimator ============ */
 const shopJpy = document.getElementById("shop-jpy");
 const discountPct = document.getElementById("discount-pct");
 const refundPct = document.getElementById("taxrefund-pct");
 const feeToggle = document.getElementById("fee-toggle");
-const rateInput = document.getElementById("rate-input");
 const rAfterDiscount = document.getElementById("r-after-discount");
 const rAfterRefund = document.getElementById("r-after-refund");
 const rFee = document.getElementById("r-fee");
 const rFinal = document.getElementById("r-final");
 
 const refundPresetsWrap = document.getElementById("refund-presets");
-[0,5,7,8,10,11].forEach(v=>{
+[0,5,8,10].forEach(v=>{
   const b = document.createElement("button");
   b.type="button"; b.textContent = v+"%";
   if(v===0) b.classList.add("active");
@@ -638,7 +735,7 @@ refundPct.addEventListener("input", ()=>{
 });
 
 function fmtJPY(n){ return "¥" + Math.round(n).toLocaleString("ja-JP"); }
-function fmtTWD(n){ return "NT$" + n.toLocaleString("zh-TW", {maximumFractionDigits:1, minimumFractionDigits:0}); }
+function fmtTWD(n){ return "NT$" + n.toLocaleString("zh-TW", {maximumFractionDigits:0, minimumFractionDigits:0}); }
 
 function recalcShop(){
   const base = parseFloat(shopJpy.value) || 0;
@@ -670,10 +767,10 @@ function recalcQuick(){
   const rate = parseFloat(rateInput.value) || 0;
   if(lastEdited==="jpy"){
     const jpy = parseFloat(jpyInput.value);
-    twdInput.value = isNaN(jpy) ? "" : (jpy*rate).toFixed(1);
+    twdInput.value = isNaN(jpy) ? "" : Math.round(jpy*rate);
   } else {
     const twd = parseFloat(twdInput.value);
-    jpyInput.value = (isNaN(twd) || rate===0) ? "" : (twd/rate).toFixed(0);
+    jpyInput.value = (isNaN(twd) || rate===0) ? "" : Math.round(twd/rate);
   }
 }
 jpyInput.addEventListener("input", ()=>{ lastEdited="jpy"; recalcQuick(); });
@@ -682,6 +779,17 @@ rateInput.addEventListener("input", recalcQuick);
 
 /* ============ phrasebook ============ */
 const phraseData = {
+  "找商品／購物":[
+    {ja:"これはいくらですか？", kana:"kore wa ikura desu ka?", zh:"這個多少錢？"},
+    {ja:"これを探してくれませんか？", kana:"kore o sagashite kuremasen ka?", zh:"請店員幫忙找這個"},
+    {ja:"在庫はありますか？", kana:"zaiko wa arimasu ka?", zh:"請問這個還有貨嗎？"},
+    {ja:"免税できますか？", kana:"menzei dekimasu ka?", zh:"可以退稅嗎？"},
+    {ja:"このクーポンは使えますか？", kana:"kono kuupon wa tsukaemasu ka?", zh:"請問可以使用這張優惠券嗎？"},
+    {ja:"他の色はありますか？", kana:"hoka no iro wa arimasu ka?", zh:"這件有其他顏色嗎？"},
+    {ja:"もっと大きいサイズはありますか？", kana:"motto ookii saizu wa arimasu ka?", zh:"有更大的尺寸嗎？"},
+    {ja:"試着してもいいですか？", kana:"shichaku shite mo ii desu ka?", zh:"可以試穿嗎？"},
+    {ja:"クレジットカードは使えますか？", kana:"kurejitto kaado wa tsukaemasu ka?", zh:"可以刷信用卡嗎？"}
+  ],
   "禮貌用語":[
     {ja:"すみません", kana:"sumimasen", zh:"不好意思／打擾一下"},
     {ja:"お願いします", kana:"onegai shimasu", zh:"麻煩您了／拜託"},
@@ -689,21 +797,11 @@ const phraseData = {
     {ja:"日本語が少ししか話せません", kana:"nihongo ga sukoshi shika hanasemasen", zh:"我只會說一點點日文"},
     {ja:"英語は話せますか？", kana:"eigo wa hanasemasu ka?", zh:"請問您會說英文嗎？"}
   ],
-  "找商品／購物":[
-    {ja:"これはいくらですか？", kana:"kore wa ikura desu ka?", zh:"這個多少錢？"},
-    {ja:"これをください", kana:"kore o kudasai", zh:"請給我這個"},
-    {ja:"もっと大きいサイズはありますか？", kana:"motto ookii saizu wa arimasu ka?", zh:"有更大的尺寸嗎？"},
-    {ja:"試着してもいいですか？", kana:"shichaku shite mo ii desu ka?", zh:"可以試穿嗎？"},
-    {ja:"免税できますか？", kana:"menzei dekimasu ka?", zh:"可以退稅嗎？"},
-    {ja:"クレジットカードは使えますか？", kana:"kurejitto kaado wa tsukaemasu ka?", zh:"可以刷信用卡嗎？"},
-    {ja:"袋をください", kana:"fukuro o kudasai", zh:"請給我一個袋子"}
-  ],
   "問路":[
     {ja:"すみません、〇〇はどこですか？", kana:"sumimasen, ○○ wa doko desu ka?", zh:"不好意思，請問〇〇在哪裡？"},
     {ja:"一番近い駅はどこですか？", kana:"ichiban chikai eki wa doko desu ka?", zh:"最近的車站在哪裡？"},
     {ja:"ここまでどう行けばいいですか？", kana:"koko made dou ikeba ii desu ka?", zh:"請問要怎麼去這裡？"},
-    {ja:"トイレはどこですか？", kana:"toire wa doko desu ka?", zh:"請問廁所在哪裡？"},
-    {ja:"歩いて行けますか？", kana:"aruite ikemasu ka?", zh:"用走的過得去嗎？"}
+    {ja:"トイレはどこですか？", kana:"toire wa doko desu ka?", zh:"請問廁所在哪裡？"}
   ],
   "餐廳用語":[
     {ja:"おすすめは何ですか？", kana:"osusume wa nan desu ka?", zh:"有推薦的餐點嗎？"},
@@ -717,6 +815,18 @@ const phraseTabsWrap = document.getElementById("phrase-tabs");
 const phraseListWrap = document.getElementById("phrase-list");
 const categories = Object.keys(phraseData);
 
+// Modal DOM
+const fcModal = document.getElementById("flashcard-modal");
+const fcJa = document.getElementById("fc-ja");
+const fcKana = document.getElementById("fc-kana");
+const fcZh = document.getElementById("fc-zh");
+const fcClose = document.getElementById("fc-close");
+
+fcClose.addEventListener("click", () => fcModal.classList.remove("show"));
+fcModal.addEventListener("click", (e) => {
+  if (e.target === fcModal) fcModal.classList.remove("show");
+});
+
 function renderPhrases(cat){
   phraseListWrap.innerHTML = "";
   phraseData[cat].forEach(p=>{
@@ -725,8 +835,22 @@ function renderPhrases(cat){
     card.innerHTML =
       '<div class="txt"><p class="ja">'+p.ja+'</p><p class="kana">'+p.kana+'</p><p class="zh">'+p.zh+'</p></div>'+
       '<button class="speak-btn" aria-label="播放發音">🔊</button>';
+    
+    // Open modal on card click
+    card.addEventListener("click", (e)=>{
+      // If clicking the speak button, ignore modal
+      if(e.target.closest(".speak-btn")) return;
+      fcJa.textContent = p.ja;
+      fcKana.textContent = p.kana;
+      fcZh.textContent = p.zh;
+      fcModal.classList.add("show");
+    });
+
     const btn = card.querySelector(".speak-btn");
-    btn.addEventListener("click", ()=> speakJapanese(p.ja, btn));
+    btn.addEventListener("click", (e)=> {
+      e.stopPropagation();
+      speakJapanese(p.ja, btn);
+    });
     phraseListWrap.appendChild(card);
   });
 }
