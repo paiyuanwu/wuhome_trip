@@ -688,28 +688,47 @@ navBtns.forEach(btn=>{
 /* ============ Auto Fetch Live Exchange Rate (VISA) ============ */
 const rateInput = document.getElementById("rate-input");
 const liveTag = document.getElementById("live-tag");
+const rateSource = document.querySelector(".rate-source"); // 抓取說明文字的區塊
+
+// 使用更穩定的 /get 節點，並加上隨機參數避免快取
 const targetUrl = 'https://www.twrates.com/card/visa/jpy.html';
-const proxyUrl = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(targetUrl);
+const proxyUrl = 'https://api.allorigins.win/get?url=' + encodeURIComponent(targetUrl) + '&t=' + Date.now();
 
 fetch(proxyUrl)
-  .then(response => response.text())
-  .then(html => {
-    // 將抓回來的 HTML 字串解析成 DOM 節點
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(html, 'text/html');
+  .then(response => {
+    if (response.ok) return response.json();
+    throw new Error('Network response was not ok.');
+  })
+  .then(data => {
+    // allorigins 的 /get 端點會把 HTML 包裝在 contents 屬性裡
+    const html = data.contents;
     
-    // 取得網頁上的純文字，並用正規表達式尋找 VISA 匯率數字
-    const text = doc.body.innerText;
-    // 匹配類似 "匯率: 0.2064" 的特徵（抓取小數點後 4~8 位的數字）
-    const match = text.match(/匯率[:：]?\s*(0\.[0-9]{4,8})/);
+    // 利用正則表達式尋找 VISA 匯率數字 (抓取小數點後 4~8 位的數字)
+    const match = html.match(/匯率[:：]?\s*(0\.[0-9]{4,8})/);
     
     if (match && match[1]) {
-      rateInput.value = parseFloat(match[1]).toFixed(4);
-      liveTag.textContent = "VISA 匯率更新成功";
+      // 更新輸入框的匯率
+      rateInput.value = parseFloat(match[1]).toFixed(8);
+      
+      // 取得今天日期 (YYYY-MM-DD)
+      const today = new Date();
+      const dateString = today.getFullYear() + "-" + 
+                         String(today.getMonth() + 1).padStart(2, '0') + "-" + 
+                         String(today.getDate()).padStart(2, '0');
+
+      // 更新說明文字與日期
+      if (rateSource) {
+        rateSource.innerHTML = `資料來源：<a href="${targetUrl}" target="_blank" rel="noopener">twrates.com</a>（VISA 日圓/台幣，${dateString}自動更新），可手動微調`;
+      }
+
+      // 更新綠色標籤
+      liveTag.textContent = "VISA匯率更新成功";
       liveTag.style.background = "#48BB78";
       liveTag.style.animation = "none";
-      recalcShop();
-      recalcQuick();
+
+      // 重新計算下方數字
+      if (typeof recalcShop === "function") recalcShop();
+      if (typeof recalcQuick === "function") recalcQuick();
     } else {
       throw new Error("無法在網頁中解析出匯率數字");
     }
