@@ -688,55 +688,74 @@ navBtns.forEach(btn=>{
 /* ============ Auto Fetch Live Exchange Rate (VISA) ============ */
 const rateInput = document.getElementById("rate-input");
 const liveTag = document.getElementById("live-tag");
-const rateSource = document.querySelector(".rate-source"); // 抓取說明文字的區塊
+const rateSource = document.querySelector(".rate-source");
 
-// 使用更穩定的 /get 節點，並加上隨機參數避免快取
+// 使用 corsproxy.io 這個更順暢的代理服務，加上隨機數避免快取
 const targetUrl = 'https://www.twrates.com/card/visa/jpy.html';
-const proxyUrl = 'https://api.allorigins.win/get?url=' + encodeURIComponent(targetUrl) + '&t=' + Date.now();
+const proxyUrl = 'https://corsproxy.io/?' + encodeURIComponent(targetUrl + '?_t=' + Date.now());
 
 fetch(proxyUrl)
   .then(response => {
-    if (response.ok) return response.json();
-    throw new Error('Network response was not ok.');
+    if (!response.ok) throw new Error('Network response was not ok.');
+    return response.text();
   })
-  .then(data => {
-    // allorigins 的 /get 端點會把 HTML 包裝在 contents 屬性裡
-    const html = data.contents;
+  .then(html => {
+    // 將抓回來的 HTML 字串轉換為真實的 DOM 結構
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, 'text/html');
     
-    // 利用正則表達式尋找 VISA 匯率數字 (抓取小數點後 4~8 位的數字)
-    const match = html.match(/匯率[:：]?\s*(0\.[0-9]{4,8})/);
+    // 方法：尋找網頁內所有 td 標籤，找到裡面文字是「VISA」的那一行
+    // 然後往右邊找兩個格子，通常就是當天的匯率數字
+    let foundRate = null;
+    const cells = doc.querySelectorAll('td');
     
-    if (match && match[1]) {
-      // 更新輸入框的匯率
-      rateInput.value = parseFloat(match[1]).toFixed(8);
+    for (let i = 0; i < cells.length; i++) {
+      if (cells[i].textContent.trim().toUpperCase() === 'VISA') {
+        // twrates 的表格結構：VISA -> 匯率數字 -> ...
+        if (cells[i + 1]) {
+          const rateText = cells[i + 1].textContent.trim();
+          const match = rateText.match(/(0\.[0-9]+)/);
+          if (match) {
+            foundRate = parseFloat(match[1]);
+            break;
+          }
+        }
+      }
+    }
+    
+    // 備用方法：如果表格方法失敗，直接全局正則找數字
+    if (!foundRate) {
+       const text = doc.body.innerText;
+       const match = text.match(/匯率[:：]?\s*(0\.[0-9]{4,8})/);
+       if(match) foundRate = parseFloat(match[1]);
+    }
+
+    if (foundRate) {
+      rateInput.value = foundRate.toFixed(8);
       
-      // 取得今天日期 (YYYY-MM-DD)
       const today = new Date();
       const dateString = today.getFullYear() + "-" + 
                          String(today.getMonth() + 1).padStart(2, '0') + "-" + 
                          String(today.getDate()).padStart(2, '0');
 
-      // 更新說明文字與日期
       if (rateSource) {
-        rateSource.innerHTML = `資料來源：<a href="${targetUrl}" target="_blank" rel="noopener">twrates.com</a>（VISA 日圓/台幣，${dateString}自動更新），可手動微調`;
+        rateSource.innerHTML = `資料來源：<a href="${targetUrl}" target="_blank" rel="noopener">twrates.com</a>（VISA 日圓/台幣，${dateString}更新），可手動微調`;
       }
 
-      // 更新綠色標籤
       liveTag.textContent = "VISA匯率更新成功";
       liveTag.style.background = "#48BB78";
       liveTag.style.animation = "none";
 
-      // 重新計算下方數字
       if (typeof recalcShop === "function") recalcShop();
       if (typeof recalcQuick === "function") recalcQuick();
     } else {
-      throw new Error("無法在網頁中解析出匯率數字");
+      throw new Error("無法解析匯率數字");
     }
   })
   .catch(err => {
     console.error("Fetch VISA rate error:", err);
-    liveTag.textContent = "無法抓取匯率，使用預設";
-    liveTag.style.background = "#A0ABC0";
+    liveTag.textContent = "無法抓取，請手動輸入";
+    liveTag.style.background = "#E25B36"; // 失敗時變成醒目的橘紅色
     liveTag.style.animation = "none";
   });
 
