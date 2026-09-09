@@ -320,7 +320,7 @@
 
 <header class="hero">
   <p class="eyebrow">JAPAN TRIP</p>
-  <h1>東京・富士五湖 秋日行</h1>
+  <h1>吳家日本東京・富士秋季行</h1>
   <p class="dates">2026.10.02（五）— 10.09（五）・8天7夜</p>
 </header>
 
@@ -442,13 +442,13 @@ const days = [
     date:"10/2", wk:"五", title:"出發 → 成田 → 淺草", hotel:{name:"ホテルアマネク浅草駅前", mapQuery:"ホテルアマネク浅草駅前"},
     items:[
       {time:"11:00", icon:"🧳", name:"高雄小港國際機場集合", mapQuery:"高雄國際機場"},
-      {time:"11:30", icon:"🍽️", name:"南苑貴賓室 (享用美味午餐)", mapQuery:"高雄機場 南苑貴賓室"},
-      {time:"14:00", icon:"✈️", name:"高雄小港國際機場起飛", note:"捷星航空 GK018", mapQuery:"高雄國際機場"},
-      {time:"18:30", icon:"🛬", name:"成田國際機場 T3", mapQuery:"成田国際空港 第3ターミナル", big:{lat:35.7719,lng:140.3929}},
-      {time:"19:00", icon:"🚈", name:"京成本線 Access Express", mapQuery:"京成本線"},
-      {time:"20:08", icon:"🚈", name:"京成成田 SKYACCESS", mapQuery:"京成成田"},
+      {time:"11:30", icon:"🍽️", name:"南苑貴賓室 (享用美味午餐)"},
+      {time:"14:00", icon:"✈️", name:"高雄小港國際機場起飛", note:"捷星航空 GK018"},
+      {time:"18:30", icon:"🛬", name:"成田國際機場 T3", big:{lat:35.7719,lng:140.3929}},
+      {time:"19:00", icon:"🚈", name:"京成本線 Access Express"},
+      {time:"20:08", icon:"🚈", name:"京成成田 SKYACCESS"},
       {icon:"🏨", name:"住宿：ホテルアマネク浅草駅前", mapQuery:"ホテルアマネク浅草駅前", big:{lat:35.7108,lng:139.7963}},
-      {time:"晚餐", icon:"🍜", name:"拉麵", mapQuery:"浅草 拉麵"}
+      {time:"晚餐", icon:"🍜", name:"拉麵"}
     ]
   },
   {
@@ -460,8 +460,8 @@ const days = [
       {time:"16:00", icon:"🌳", name:"上野公園 不忍池", mapQuery:"上野恩賜公園 不忍池"},
       {time:"18:00", icon:"🛍️", name:"阿美橫町", mapQuery:"アメ横商店街", big:{lat:35.7098,lng:139.7745}},
       {time:"晚餐", icon:"🍽️", name:"肉の大山 上野店", mapQuery:"肉の大山 上野店"},
-      {icon:"🌙", name:"晚間自由行動 (日本人)", mapQuery:"上野"},
-      {icon:"🏨", name:"住宿：同上", mapQuery:"ホテルアマネク浅草駅前"}
+      {icon:"🌙", name:"晚間自由行動"},
+      {icon:"🏨", name:"住宿：", mapQuery:"ホテルアマネク浅草駅前"}
     ]
   },
   {
@@ -479,19 +479,19 @@ const days = [
       {icon:"🏮", name:"藏造老街", mapQuery:"蔵造りの町並み"},
       {icon:"⛩️", name:"冰川神社", mapQuery:"川越氷川神社"},
       {icon:"♨️", name:"小江戶溫泉 KASHIBA", mapQuery:"小江戸温泉 KASHIBA"},
-      {icon:"🌙", name:"晚間自由行動", mapQuery:"川越"},
-      {time:"晚餐", icon:"🍜", name:"拉麵", mapQuery:"拉麵"},
-      {icon:"🏨", name:"住宿：同上", mapQuery:"ホテルアマネク浅草駅前"}
+      {icon:"🌙", name:"晚間自由行動"},
+      {time:"晚餐", icon:"🍜", name:"拉麵"},
+      {icon:"🏨", name:"住宿：", mapQuery:"ホテルアマネク浅草駅前"}
     ]
   },
   {
     date:"10/5", wk:"一", title:"前往富士河口湖", hotel:{name:"HAOSTAY", mapQuery:"HAOSTAY 河口湖"},
     items:[
-      {time:"08:30", icon:"🚶", name:"離開飯店", mapQuery:"ホテルアマネク浅草駅前"},
+      {time:"08:30", icon:"🚶", name:"離開飯店"},
       {time:"09:20", icon:"🚌", name:"東京站八重洲側", note:"搭乘高速巴士前往河口湖", link:"https://japanbusonline.com/bus-repo/zh-hant/%E6%9C%AA%E5%88%86%E9%A1%9E/6955/", mapQuery:"東京駅八重洲南口"},
       {time:"11:20", icon:"🚏", name:"抵達河口湖站", mapQuery:"河口湖駅", big:{lat:35.5013,lng:138.7472}},
       {time:"11:30", icon:"🍲", name:"午餐：ほうとう 不動 河口湖站前店", mapQuery:"ほうとう不動 河口湖駅前店"},
-      {time:"12:30", icon:"🚗", name:"租車", mapQuery:"河口湖駅 租車"},
+      {time:"12:30", icon:"🚗", name:"租車"},
       {time:"13:00", icon:"🏪", name:"LAWSON 富士河口湖町役場前店", mapQuery:"ローソン富士河口湖町役場前店"},
       {time:"13:40", icon:"🛣️", name:"前往忍野八海", note:"(車程約 25-30 分鐘)"},
       {time:"14:10", icon:"💧", name:"忍野八海", mapQuery:"忍野八海"},
@@ -511,11 +511,11 @@ const days = [
       {time:"10:15", icon:"⌚", name:"日川時計店 ＆ 下吉田散步", note:"(開車 3 分鐘即可抵達)", mapQuery:"日川時計店"},
       {time:"11:00", icon:"🔙", name:"開車返回河口湖市區", mapQuery:"河口湖"},
       {time:"11:20", icon:"🚡", name:"河口湖富士山纜車", note:"預留 1.5 小時 🚨若排隊太久可改去八木崎公園", mapQuery:"河口湖 富士山パノラマロープウェイ", big:{lat:35.5065,lng:138.7715}},
-      {time:"12:50", icon:"🔑", name:"歸還租車", mapQuery:"河口湖駅 租車"},
-      {time:"13:00", icon:"🍽️", name:"午餐", mapQuery:"河口湖 午餐"},
+      {time:"12:50", icon:"🔑", name:"歸還租車"},
+      {time:"13:00", icon:"🍽️", name:"午餐待定"},
       {time:"14:30", icon:"🚌", name:"搭高速巴士返回東京", mapQuery:"河口湖駅"},
       {icon:"🏙️", name:"秋葉原", mapQuery:"秋葉原"},
-      {time:"晚餐", icon:"🍜", name:"拉麵", note:"日本人", mapQuery:"東京 拉麵"},
+      {time:"晚餐", icon:"🍜", name:"拉麵"},
       {icon:"🏨", name:"住宿：ホテルアマネク浅草駅前", mapQuery:"ホテルアマネク浅草駅前"}
     ]
   },
@@ -526,11 +526,11 @@ const days = [
       {icon:"🏙️", name:"麻布台之丘", mapQuery:"麻布台ヒルズ"},
       {icon:"🌳", name:"芝公園", mapQuery:"芝公園 東京"},
       {time:"午餐", icon:"🍲", name:"SUKIYAKI 六松", mapQuery:"SUKIYAKI 六松"},
-      {icon:"💬", name:"富士灌中文", mapQuery:"富士灌"},
+      {icon:"💬", name:"子情前往富士相機灌中文", mapQuery:"富士軟片廣場"},
       {icon:"🚦", name:"十字路口 (澀谷)", mapQuery:"渋谷スクランブル交差点"},
       {time:"16:00", icon:"🌆", name:"澀谷SKY", mapQuery:"SHIBUYA SKY", big:{lat:35.6580,lng:139.7016}},
       {time:"19:00", icon:"🚇", name:"前往烤肉鶯谷園", mapQuery:"鶯谷駅"},
-      {time:"19:40", icon:"🚉", name:"抵達鶯谷站", mapQuery:"鶯谷駅"},
+      {time:"19:40", icon:"🚉", name:"抵達鶯谷站"},
       {time:"20:00", icon:"🥩", name:"烤肉鶯谷園", link:"https://tabelog.com/tokyo/A1311/A131104/13012243/dtlrvwlst/", mapQuery:"鶯谷園 東京"},
       {icon:"🏨", name:"住宿：同上", mapQuery:"ホテルアマネク浅草駅前"}
     ]
@@ -539,7 +539,7 @@ const days = [
     date:"10/8", wk:"四", title:"皇居・銀座・成田", hotel:{name:"アートホテル成田", mapQuery:"アートホテル成田"},
     items:[
       {time:"10:30", icon:"🏯", name:"皇居外院", mapQuery:"皇居", big:{lat:35.6852,lng:139.7528}},
-      {time:"12:00", icon:"🍽️", name:"午餐：にしたに OR 迴轉壽司 OR 拉麵", mapQuery:"銀座 午餐"},
+      {time:"12:00", icon:"🍽️", name:"午餐：にしたに(壽司) OR 迴轉壽司 OR 拉麵", mapQuery:"銀座 午餐"},
       {time:"13:00", icon:"🛍️", name:"銀座", mapQuery:"銀座 東京"},
       {time:"14:10", icon:"🚌", name:"搭高速巴士前往 OUTLETS", note:"東京站八重洲高速巴士站 (1,300日圓)", mapQuery:"東京駅八重洲南口"},
       {time:"15:05", icon:"🛍️", name:"抵達酒酒井 PREMIUM OUTLETS", mapQuery:"酒々井プレミアム・アウトレット"},
@@ -554,7 +554,7 @@ const days = [
     items:[
       {time:"10:30", icon:"🚌", name:"飯店接駁車出發", mapQuery:"アートホテル成田"},
       {time:"13:55", icon:"🛫", name:"成田國際機場 T2", note:"AirAsia FD235", mapQuery:"成田国際空港 第2ターミナル", big:{lat:35.7719,lng:140.3929}},
-      {time:"17:05", icon:"🛬", name:"抵達 高雄小港國際機場", mapQuery:"高雄國際機場"}
+      {time:"17:05", icon:"🛬", name:"抵達 高雄小港國際機場"}
     ]
   }
 ];
