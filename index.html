@@ -314,10 +314,102 @@
     border: none; color: #FFF; width: 40px; height: 40px; border-radius: 50%;
     font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center;
   }
+  /* ---------- AGREEMENT MODAL ---------- */
+  .agreement-modal {
+    position: fixed; inset: 0; background: rgba(31, 42, 61, 0.95); z-index: 9999;
+    display: flex; align-items: center; justify-content: center;
+    padding: 20px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    transition: opacity 0.4s, visibility 0.4s;
+  }
+  .agreement-modal.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+  
+  .agreement-content {
+    background: #FFF; border-radius: 20px; width: 100%; max-width: 500px;
+    max-height: 85vh; display: flex; flex-direction: column;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3); overflow: hidden;
+  }
+  .agreement-content h2 {
+    background: var(--accent); color: #FFF; margin: 0; padding: 20px;
+    font-size: 20px; text-align: center; font-weight: 900; line-height: 1.4;
+  }
+  .agreement-text {
+    padding: 20px; overflow-y: auto; flex: 1;
+    font-size: 14px; color: var(--ink); line-height: 1.6; -webkit-overflow-scrolling: touch;
+  }
+  .agreement-text h4 { color: var(--accent-2); margin: 16px 0 8px; font-size: 15px; font-weight: 900; border-bottom: 2px solid var(--paper-2); padding-bottom: 4px; }
+  .agreement-text h4:first-child { margin-top: 0; }
+  .agreement-text ul { margin: 0; padding-left: 20px; }
+  .agreement-text li { margin-bottom: 8px; font-weight: 500; }
+  .agreement-text li strong { color: var(--ink); font-weight: 800; }
+  
+  .penalty {
+    margin-top: 20px; padding: 12px 16px; background: #FFF1EE; border-left: 4px solid var(--accent);
+    color: var(--accent); font-weight: 900; font-size: 15px; border-radius: 4px; line-height: 1.5;
+  }
+  
+  .agreement-footer {
+    padding: 16px 20px 20px; background: var(--paper); border-top: 1px solid var(--line);
+    display: flex; flex-direction: column; gap: 16px;
+  }
+  .checkbox-label {
+    display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 800;
+    color: var(--ink); cursor: pointer;
+  }
+  .checkbox-label input { width: 22px; height: 22px; accent-color: var(--accent); flex-shrink: 0;}
+  .agree-btn {
+    background: var(--accent); color: #FFF; border: none; padding: 14px;
+    border-radius: 12px; font-size: 16px; font-weight: 800; cursor: pointer; transition: 0.2s;
+  }
+  .agree-btn:disabled { background: #CBD5E1; cursor: not-allowed; opacity: 0.7; }
 </style>
 </head>
 <body>
+<!-- ===================== AGREEMENT MODAL ===================== -->
+<div id="agreement-modal" class="agreement-modal">
+  <div class="agreement-content">
+    <h2 class="serif">✈️ 東京・富士秋日行<br>旅遊同意條款</h2>
+    <div class="agreement-text">
+      <h4>【一、 餐飲與飲食守則】</h4>
+      <ul>
+        <li><strong>入境隨俗：</strong>絕對不說「這很難吃，不如在家煮」。不管是排隊名店還是路邊小吃，一律大讚「好吃、特別、有創意」。</li>
+        <li><strong>點餐負責：</strong>點餐時絕不說「隨便、都可以」，結果點完又嫌不好吃。</li>
+        <li><strong>尊重預約：</strong>已經預約好的餐廳，絕對不能臨時變卦說不想吃或吃不下，以免造成預約者的困擾。</li>
+        <li><strong>自備糧草：</strong>旅途吃飯不一定準時，請自備小餅乾糖果止飢；若非溫水不喝，請自備保溫水壺並隨時裝滿，不然就請練習喝冷水。</li>
+      </ul>
+      
+      <h4>【二、 體力與生理需求】</h4>
+      <ul>
+        <li><strong>及時反應：</strong>「肚子餓、累了走不動、身體不舒服」第一時間就要說，千萬別悶在心裡生氣。</li>
+        <li><strong>把握廁所：</strong>看到廁所就要上，絕對不要離開景點了才喊「剛剛不想上，現在很急」。</li>
+        <li><strong>量力而為：</strong>如果真的很累，可以提出「想在飯店休息」的要求，千萬不要硬跟著出門還擺臉色。</li>
+      </ul>
 
+      <h4>【三、 行程與團隊配合】</h4>
+      <ul>
+        <li><strong>完全服從：</strong>絕對信任辛苦安排行程的人，年輕人安排去哪，我們就去哪。</li>
+        <li><strong>保持聯繫：</strong>隨時保持手機暢通，以免大家擔心找不到人。</li>
+        <li><strong>隨遇而安：</strong>遇到迷路或突發狀況「先解決問題」。把變更當作是在探險，不翻舊帳、不碎碎念。</li>
+      </ul>
+
+      <h4>【四、 情緒與心態控管】</h4>
+      <ul>
+        <li><strong>不隨意碎念：</strong>絕不因天氣熱、走路累、排隊久而碎碎念。不問「還有多久才到」，也不說「這有什麼好玩的」。</li>
+        <li><strong>不亂擺姿態：</strong>找不到喜歡的東西或買不到東西時，絕對不甩態、給臉色。</li>
+        <li><strong>物價保持冷靜：</strong>絕不說「好貴，不如在台灣買」，請改說「物價真驚人，大開眼界」。</li>
+        <li><strong>景點保持讚美：</strong>絕不說「這也不怎麼樣啊，早知道就不來」，請多說「出來走走就是幸福」。</li>
+      </ul>
+
+      <div class="penalty">🚨 誓言：如果違反上述條款，請大家吃日本頂級無菜單料理！</div>
+    </div>
+    <div class="agreement-footer">
+      <label class="checkbox-label">
+        <input type="checkbox" id="agree-checkbox">
+        <span>我已詳細閱讀，並保證絕對遵守！</span>
+      </label>
+      <button id="agree-btn" class="agree-btn" disabled>我同意，開始旅程</button>
+    </div>
+  </div>
+</div>
 <header class="hero">
   <p class="eyebrow">JAPAN TRIP</p>
   <h1>吳家日本東京・富士秋季行</h1>
