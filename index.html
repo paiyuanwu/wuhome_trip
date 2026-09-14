@@ -361,6 +361,28 @@
     border-radius: 12px; font-size: 16px; font-weight: 800; cursor: pointer; transition: 0.2s;
   }
   .agree-btn:disabled { background: #CBD5E1; cursor: not-allowed; opacity: 0.7; }
+  /* 新增：簽名區塊與主畫面徽章樣式 */
+  .sign-area {
+    display: flex; align-items: center; gap: 8px; margin-bottom: 4px;
+  }
+  .sign-area label {
+    font-size: 14px; font-weight: 800; color: var(--ink); white-space: nowrap;
+  }
+  .sign-area input {
+    flex: 1; border: 2px solid var(--line); border-radius: 8px; padding: 10px;
+    font-size: 15px; font-family: inherit; font-weight: 700; color: var(--ink);
+    transition: 0.2s;
+  }
+  .sign-area input:focus {
+    outline: none; border-color: var(--accent);
+  }
+  .signed-badge {
+    display: inline-block; margin-top: 10px; padding: 4px 10px;
+    background: rgba(72, 187, 120, 0.2); border: 1px solid #48BB78;
+    color: #48BB78; font-size: 12px; font-weight: 800; border-radius: 20px;
+    position: relative; z-index: 1;
+  }
+  .signed-badge.hidden { display: none; }
 </style>
 </head>
 <body>
@@ -402,6 +424,10 @@
       <div class="penalty">🚨 誓言：如果違反上述條款，請大家吃日本頂級無菜單料理！</div>
     </div>
     <div class="agreement-footer">
+      <div class="sign-area">
+        <label for="signer-name">簽署人姓名：</label>
+        <input type="text" id="signer-name" placeholder="請輸入您的姓名">
+      </div>
       <label class="checkbox-label">
         <input type="checkbox" id="agree-checkbox">
         <span>我已詳細閱讀，並保證絕對遵守！</span>
@@ -410,10 +436,12 @@
     </div>
   </div>
 </div>
+
 <header class="hero">
   <p class="eyebrow">JAPAN TRIP</p>
   <h1>吳家日本東京・富士秋季行</h1>
   <p class="dates">2026.10.02（五）— 10.09（五）・8天7夜</p>
+  <div id="signed-badge" class="signed-badge hidden">已簽署：<span></span></div>
 </header>
 
 <!-- ===================== 行程 VIEW ===================== -->
@@ -951,6 +979,49 @@ function speakJapanese(text, btn){
   utter.onerror = ()=> btn.classList.remove("playing");
   window.speechSynthesis.speak(utter);
 }
+  /* ============ Agreement Modal Logic ============ */
+const agreeModal = document.getElementById('agreement-modal');
+const agreeCheckbox = document.getElementById('agree-checkbox');
+const agreeBtn = document.getElementById('agree-btn');
+const signerNameInput = document.getElementById('signer-name');
+const signedBadge = document.getElementById('signed-badge');
+const signedBadgeName = signedBadge.querySelector('span');
+
+// 檢查是否所有條件（有打字＋有勾選）都滿足，來決定按鈕是否能按
+function checkAgreeStatus() {
+  const isNameFilled = signerNameInput.value.trim().length > 0;
+  const isChecked = agreeCheckbox.checked;
+  agreeBtn.disabled = !(isNameFilled && isChecked);
+}
+
+signerNameInput.addEventListener('input', checkAgreeStatus);
+agreeCheckbox.addEventListener('change', checkAgreeStatus);
+
+// 讀取 LocalStorage：判斷之前是否已經簽署過（永久記憶）
+const savedName = localStorage.getItem('trip_signer_name');
+if (savedName) {
+  // 已經簽過，隱藏跳出視窗，並在首頁顯示簽署者名字
+  agreeModal.classList.add('hidden');
+  signedBadgeName.textContent = savedName;
+  signedBadge.classList.remove('hidden');
+} else {
+  // 沒簽過，禁止背景滾動
+  document.body.style.overflow = 'hidden'; 
+}
+
+// 點擊同意按鈕
+agreeBtn.addEventListener('click', () => {
+  const name = signerNameInput.value.trim();
+  
+  // 儲存名字到 LocalStorage (就算重整或關閉瀏覽器也不會消失)
+  localStorage.setItem('trip_signer_name', name);
+  
+  // 更新主畫面徽章並關閉 Modal
+  signedBadgeName.textContent = name;
+  signedBadge.classList.remove('hidden');
+  agreeModal.classList.add('hidden');
+  document.body.style.overflow = ''; // 恢復背景滾動
+});
 </script>
 </body>
 </html>
