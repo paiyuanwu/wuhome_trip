@@ -314,134 +314,14 @@
     border: none; color: #FFF; width: 40px; height: 40px; border-radius: 50%;
     font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center;
   }
-  /* ---------- AGREEMENT MODAL ---------- */
-  .agreement-modal {
-    position: fixed; inset: 0; background: rgba(31, 42, 61, 0.95); z-index: 9999;
-    display: flex; align-items: center; justify-content: center;
-    padding: 20px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-    transition: opacity 0.4s, visibility 0.4s;
-  }
-  .agreement-modal.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
-  
-  .agreement-content {
-    background: #FFF; border-radius: 20px; width: 100%; max-width: 500px;
-    max-height: 85vh; display: flex; flex-direction: column;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3); overflow: hidden;
-  }
-  .agreement-content h2 {
-    background: var(--accent); color: #FFF; margin: 0; padding: 20px;
-    font-size: 20px; text-align: center; font-weight: 900; line-height: 1.4;
-  }
-  .agreement-text {
-    padding: 20px; overflow-y: auto; flex: 1;
-    font-size: 14px; color: var(--ink); line-height: 1.6; -webkit-overflow-scrolling: touch;
-  }
-  .agreement-text h4 { color: var(--accent-2); margin: 16px 0 8px; font-size: 15px; font-weight: 900; border-bottom: 2px solid var(--paper-2); padding-bottom: 4px; }
-  .agreement-text h4:first-child { margin-top: 0; }
-  .agreement-text ul { margin: 0; padding-left: 20px; }
-  .agreement-text li { margin-bottom: 8px; font-weight: 500; }
-  .agreement-text li strong { color: var(--ink); font-weight: 800; }
-  
-  .penalty {
-    margin-top: 20px; padding: 12px 16px; background: #FFF1EE; border-left: 4px solid var(--accent);
-    color: var(--accent); font-weight: 900; font-size: 15px; border-radius: 4px; line-height: 1.5;
-  }
-  
-  .agreement-footer {
-    padding: 16px 20px 20px; background: var(--paper); border-top: 1px solid var(--line);
-    display: flex; flex-direction: column; gap: 16px;
-  }
-  .checkbox-label {
-    display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 800;
-    color: var(--ink); cursor: pointer;
-  }
-  .checkbox-label input { width: 22px; height: 22px; accent-color: var(--accent); flex-shrink: 0;}
-  .agree-btn {
-    background: var(--accent); color: #FFF; border: none; padding: 14px;
-    border-radius: 12px; font-size: 16px; font-weight: 800; cursor: pointer; transition: 0.2s;
-  }
-  .agree-btn:disabled { background: #CBD5E1; cursor: not-allowed; opacity: 0.7; }
-  /* 新增：簽名區塊與主畫面徽章樣式 */
-  .sign-area {
-    display: flex; align-items: center; gap: 8px; margin-bottom: 4px;
-  }
-  .sign-area label {
-    font-size: 14px; font-weight: 800; color: var(--ink); white-space: nowrap;
-  }
-  .sign-area input {
-    flex: 1; border: 2px solid var(--line); border-radius: 8px; padding: 10px;
-    font-size: 15px; font-family: inherit; font-weight: 700; color: var(--ink);
-    transition: 0.2s;
-  }
-  .sign-area input:focus {
-    outline: none; border-color: var(--accent);
-  }
-  .signed-badge {
-    display: inline-block; margin-top: 10px; padding: 4px 10px;
-    background: rgba(72, 187, 120, 0.2); border: 1px solid #48BB78;
-    color: #48BB78; font-size: 12px; font-weight: 800; border-radius: 20px;
-    position: relative; z-index: 1;
-  }
-  .signed-badge.hidden { display: none; }
 </style>
 </head>
 <body>
-<!-- ===================== AGREEMENT MODAL ===================== -->
-<div id="agreement-modal" class="agreement-modal">
-  <div class="agreement-content">
-    <h2 class="serif">✈️ 東京・富士秋日行<br>旅遊同意條款</h2>
-    <div class="agreement-text">
-      <h4>【一、 餐飲與飲食守則】</h4>
-      <ul>
-        <li><strong>入境隨俗：</strong>絕對不說「這很難吃，不如在家煮」。不管是排隊名店還是路邊小吃，一律大讚「好吃、特別、有創意」。</li>
-        <li><strong>點餐負責：</strong>點餐時絕不說「隨便、都可以」，結果點完又嫌不好吃。</li>
-        <li><strong>尊重預約：</strong>已經預約好的餐廳，絕對不能臨時變卦說不想吃或吃不下，以免造成預約者的困擾。</li>
-        <li><strong>自備糧草：</strong>旅途吃飯不一定準時，請自備小餅乾糖果止飢；若非溫水不喝，請自備保溫水壺並隨時裝滿，不然就請練習喝冷水。</li>
-      </ul>
-      
-      <h4>【二、 體力與生理需求】</h4>
-      <ul>
-        <li><strong>及時反應：</strong>「肚子餓、累了走不動、身體不舒服」第一時間就要說，千萬別悶在心裡生氣。</li>
-        <li><strong>把握廁所：</strong>看到廁所就要上，絕對不要離開景點了才喊「剛剛不想上，現在很急」。</li>
-        <li><strong>量力而為：</strong>如果真的很累，可以提出「想在飯店休息」的要求，千萬不要硬跟著出門還擺臉色。</li>
-      </ul>
-
-      <h4>【三、 行程與團隊配合】</h4>
-      <ul>
-        <li><strong>完全服從：</strong>絕對信任辛苦安排行程的人，年輕人安排去哪，我們就去哪。</li>
-        <li><strong>保持聯繫：</strong>隨時保持手機暢通，以免大家擔心找不到人。</li>
-        <li><strong>隨遇而安：</strong>遇到迷路或突發狀況「先解決問題」。把變更當作是在探險，不翻舊帳、不碎碎念。</li>
-      </ul>
-
-      <h4>【四、 情緒與心態控管】</h4>
-      <ul>
-        <li><strong>不隨意碎念：</strong>絕不因天氣熱、走路累、排隊久而碎碎念。不問「還有多久才到」，也不說「這有什麼好玩的」。</li>
-        <li><strong>不亂擺姿態：</strong>找不到喜歡的東西或買不到東西時，絕對不甩態、給臉色。</li>
-        <li><strong>物價保持冷靜：</strong>絕不說「好貴，不如在台灣買」，請改說「物價真驚人，大開眼界」。</li>
-        <li><strong>景點保持讚美：</strong>絕不說「這也不怎麼樣啊，早知道就不來」，請多說「出來走走就是幸福」。</li>
-      </ul>
-
-      <div class="penalty">🚨 誓言：如果違反上述條款，請大家吃日本頂級無菜單料理！</div>
-    </div>
-    <div class="agreement-footer">
-      <div class="sign-area">
-        <label for="signer-name">簽署人姓名：</label>
-        <input type="text" id="signer-name" placeholder="請輸入您的姓名">
-      </div>
-      <label class="checkbox-label">
-        <input type="checkbox" id="agree-checkbox">
-        <span>我已詳細閱讀，並保證絕對遵守！</span>
-      </label>
-      <button id="agree-btn" class="agree-btn" disabled>我同意，開始旅程</button>
-    </div>
-  </div>
-</div>
 
 <header class="hero">
   <p class="eyebrow">JAPAN TRIP</p>
   <h1>吳家日本東京・富士秋季行</h1>
   <p class="dates">2026.10.02（五）— 10.09（五）・8天7夜</p>
-  <div id="signed-badge" class="signed-badge hidden">已簽署：<span></span></div>
 </header>
 
 <!-- ===================== 行程 VIEW ===================== -->
@@ -614,7 +494,7 @@ const days = [
     items:[
       {time:"08:30", icon:"🚶", name:"離開飯店，搭乘銀座線到京橋"},
       {time:"09:20", icon:"🚌", name:"東京站八重洲側 (搭乘高速巴士前往河口湖)", link:"https://maps.app.goo.gl/Ka2N68QxjLs5SRuz7", note:"巴士資訊: https://japanbusonline.com/bus-repo/zh-hant/%E6%9C%AA%E5%88%86%E9%A1%9E/6955/"},
-      {time:"11:20", icon:"🚏", name:"抵達河口湖站"},
+      {time:"11:20", icon:"🚏", name:"抵達河口湖站", link:"https://www.fujiyamaconnect.jp/mypage/ticket/"},
       {time:"11:30", icon:"🍲", name:"午餐：ほうとう (餺飥) 不動 河口湖站前店", mapQuery:"ほうとう不動 河口湖駅前店", big:{lat:35.5013,lng:138.7472}},
       {time:"12:30", icon:"🚗", name:"租車", mapQuery:"河口湖駅 租車"},
       {time:"13:00", icon:"🏪", name:"LAWSON 富士河口湖町役場前店", mapQuery:"ローソン富士河口湖町役場前店"},
@@ -638,7 +518,7 @@ const days = [
       {time:"11:20", icon:"🚡", name:"富士山纜車", note:"🚨如果纜車要排隊很久可以考慮其他地方（ex 八木崎公園）", mapQuery:"河口湖 富士山パノラマロープウェイ", big:{lat:35.5065,lng:138.7715}},
       {time:"12:50", icon:"🚗", name:"【歸還租車】", mapQuery:"河口湖 租車"},
       {time:"13:00", icon:"🍽️", name:"【午餐】喜楽食堂", mapQuery:"喜楽食堂 河口湖"},
-      {time:"14:30", icon:"🚌", name:"搭高速巴士返回東京"},
+      {time:"14:30", icon:"🚌", name:"搭高速巴士返回東京", link:"https://www.fujiyamaconnect.jp/mypage/ticket/"},
       {time:"16:35", icon:"🚏", name:"抵達東京"},
       {time:"傍晚", icon:"🏙️", name:"回飯店小憩片刻後前往秋葉原", mapQuery:"秋葉原"},
       {time:"晚餐", icon:"🍱", name:"日本超商美食大秘寶", mapQuery:"東京 超商"},
@@ -663,11 +543,11 @@ const days = [
     items:[
       {time:"09:00前", icon:"🧳", name:"把行李送到櫃台，使用行李寄送服務至飯店"},
       {time:"10:30", icon:"🏯", name:"皇居外院", mapQuery:"皇居外苑", big:{lat:35.6852,lng:139.7528}},
-      {time:"12:00", icon:"🍽️", name:"享用美味午餐", note:"迴轉壽司 OR 拉麵", mapQuery:"銀座 午餐"},
+      {time:"12:00", icon:"🍽️", name:"享用美味午餐：迴轉壽司 OR 拉麵"},
       {time:"13:00", icon:"🛍️", name:"銀座 / N.Y.C. SAND", mapQuery:"N.Y.C. SAND 銀座"},
       {time:"14:10", icon:"🚌", name:"東京站八重洲高速巴士站地下A層A02號乘車處", note:"搭乘高速巴士前往OUTLETS (1,300日圓)", link:"https://maps.app.goo.gl/6qopXPx39LZ1rrJi8", official:"https://bt-tokyoyaesu.com/zh/accessmap-a-sc/"},
       {time:"15:05", icon:"🛍️", name:"酒酒井PREMIUM OUTLETS", mapQuery:"酒々井プレミアム・アウトレット"},
-      {time:"晚上", icon:"🚌", name:"搭乘接駁車前往JR酒酒井", note:"班次銜接: 19:35/20:12/21:00 或 20:00/20:31/21:45 (提早逛完可18:40直達機場)", mapQuery:"JR酒々井駅"},
+      {time:"晚上", icon:"🚌", name:"搭乘接駁車前往JR酒酒井", note:"班次銜接: 18:40直達機場19:00飯店接駁車 / 19:15/19:40/19:40(也許遲到) / 19:35/20:12/20:40 / 20:50/21:21/21:45 / UNER 4000日幣", mapQuery:"JR酒々井駅"},
       {time:"22:30前", icon:"♨️", name:"入場享受溫泉"},
       {time:"晚餐", icon:"🍽️", name:"Outlet覓食", mapQuery:"酒々井プレミアム・アウトレット 餐廳"},
       {icon:"🏨", name:"住宿：アートホテル成田", mapQuery:"アートホテル成田", big:{lat:35.7762,lng:140.3319}}
@@ -979,49 +859,6 @@ function speakJapanese(text, btn){
   utter.onerror = ()=> btn.classList.remove("playing");
   window.speechSynthesis.speak(utter);
 }
-  /* ============ Agreement Modal Logic ============ */
-const agreeModal = document.getElementById('agreement-modal');
-const agreeCheckbox = document.getElementById('agree-checkbox');
-const agreeBtn = document.getElementById('agree-btn');
-const signerNameInput = document.getElementById('signer-name');
-const signedBadge = document.getElementById('signed-badge');
-const signedBadgeName = signedBadge.querySelector('span');
-
-// 檢查是否所有條件（有打字＋有勾選）都滿足，來決定按鈕是否能按
-function checkAgreeStatus() {
-  const isNameFilled = signerNameInput.value.trim().length > 0;
-  const isChecked = agreeCheckbox.checked;
-  agreeBtn.disabled = !(isNameFilled && isChecked);
-}
-
-signerNameInput.addEventListener('input', checkAgreeStatus);
-agreeCheckbox.addEventListener('change', checkAgreeStatus);
-
-// 讀取 LocalStorage：判斷之前是否已經簽署過（永久記憶）
-const savedName = localStorage.getItem('trip_signer_name');
-if (savedName) {
-  // 已經簽過，隱藏跳出視窗，並在首頁顯示簽署者名字
-  agreeModal.classList.add('hidden');
-  signedBadgeName.textContent = savedName;
-  signedBadge.classList.remove('hidden');
-} else {
-  // 沒簽過，禁止背景滾動
-  document.body.style.overflow = 'hidden'; 
-}
-
-// 點擊同意按鈕
-agreeBtn.addEventListener('click', () => {
-  const name = signerNameInput.value.trim();
-  
-  // 儲存名字到 LocalStorage (就算重整或關閉瀏覽器也不會消失)
-  localStorage.setItem('trip_signer_name', name);
-  
-  // 更新主畫面徽章並關閉 Modal
-  signedBadgeName.textContent = name;
-  signedBadge.classList.remove('hidden');
-  agreeModal.classList.add('hidden');
-  document.body.style.overflow = ''; // 恢復背景滾動
-});
 </script>
 </body>
 </html>
