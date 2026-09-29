@@ -296,14 +296,14 @@
   .speak-btn.playing { background: var(--accent); color: #FFF; transform: scale(1.1); }
   .phrase-note { font-size: 11px; color: #8BA0B8; margin-top: 16px; line-height: 1.5; font-weight: 500; text-align: center; }
 
-  /* ---------- FLASHCARD MODAL ---------- */
-  #flashcard-modal {
+  /* ---------- FLASHCARD & COUPON MODAL ---------- */
+  #flashcard-modal, #coupon-modal {
     position: fixed; inset: 0; background: rgba(31,42,61,0.95); z-index: 100;
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     padding: 20px; opacity: 0; pointer-events: none; transition: 0.25s ease-out;
     backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
   }
-  #flashcard-modal.show { opacity: 1; pointer-events: auto; }
+  #flashcard-modal.show, #coupon-modal.show { opacity: 1; pointer-events: auto; }
   .fc-content { text-align: center; max-width: 95vw; }
   .fc-ja { font-size: 10vw; font-weight: 900; color: #FFF; margin: 0 0 16px; line-height: 1.3; }
   @media(min-width: 500px) { .fc-ja { font-size: 50px; } }
@@ -314,6 +314,16 @@
     border: none; color: #FFF; width: 40px; height: 40px; border-radius: 50%;
     font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center;
   }
+
+  /* ---------- COUPONS ---------- */
+  .coupon-grid { display: flex; flex-direction: column; gap: 12px; margin-top: 12px; }
+  .coupon-thumb { 
+    width: 100%; border-radius: 8px; border: 1px solid var(--line); 
+    cursor: pointer; display: block; transition: 0.1s;
+  }
+  .coupon-thumb:active { opacity: 0.8; }
+  #coupon-modal-img { max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: 8px; }
+
 </style>
 </head>
 <body>
@@ -392,6 +402,18 @@
         <div class="row final"><span>台幣實付估算</span><span id="r-final">NT$0</span></div>
       </div>
     </div>
+
+    <!-- ===================== 新增的優惠券專區 ===================== -->
+    <div class="conv-card" style="margin-top: 16px;">
+      <h3>🎟️ 優惠券專區</h3>
+      <p style="font-size: 12px; color: var(--ink-soft); margin: 0 0 8px;">點擊圖片即可放大，方便店員掃描條碼</p>
+      <div class="coupon-grid">
+        <!-- 這裡放您準備好的優惠券圖檔，替換 src 的連結即可 -->
+        <img src="https://via.placeholder.com/600x200?text=BicCamera+Coupon" alt="BicCamera" class="coupon-thumb">
+        <img src="https://via.placeholder.com/600x200?text=Don+Quijote+Coupon" alt="Don Quijote" class="coupon-thumb">
+        <img src="https://via.placeholder.com/600x200?text=Matsumoto+Kiyoshi" alt="Matsumoto Kiyoshi" class="coupon-thumb">
+      </div>
+    </div>
     
     <p class="conv-note">匯率每日變動，結果僅供旅途中概略估算參考。</p>
   </div>
@@ -426,6 +448,14 @@
     <div class="fc-ja" id="fc-ja"></div>
     <div class="fc-kana" id="fc-kana"></div>
     <div class="fc-zh" id="fc-zh"></div>
+  </div>
+</div>
+
+<!-- ===================== COUPON MODAL ===================== -->
+<div id="coupon-modal">
+  <button class="fc-close" id="coupon-close">✕</button>
+  <div class="fc-content">
+    <img id="coupon-modal-img" src="" alt="優惠券放大">
   </div>
 </div>
 
@@ -564,10 +594,6 @@ const days = [
     ]
   }
 ];
-
-
-
-
 
 /* ============ render day pills & panels ============ */
 const pillsWrap = document.getElementById("day-pills");
@@ -861,6 +887,24 @@ function speakJapanese(text, btn){
   utter.onerror = ()=> btn.classList.remove("playing");
   window.speechSynthesis.speak(utter);
 }
+
+/* ============ Coupon Modal Logic ============ */
+const couponModal = document.getElementById('coupon-modal');
+const couponImg = document.getElementById('coupon-modal-img');
+const couponClose = document.getElementById('coupon-close');
+
+document.querySelectorAll('.coupon-thumb').forEach(img => {
+  img.addEventListener('click', (e) => {
+    couponImg.src = e.target.src;
+    couponModal.classList.add('show');
+  });
+});
+
+couponClose.addEventListener('click', () => couponModal.classList.remove('show'));
+couponModal.addEventListener('click', (e) => {
+  if (e.target === couponModal) couponModal.classList.remove('show');
+});
+
 </script>
 </body>
 </html>
