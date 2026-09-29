@@ -316,7 +316,7 @@
   }
 
   /* ---------- COUPONS ---------- */
-  .coupon-grid { display: flex; flex-direction: column; gap: 12px; margin-top: 12px; }
+  .coupon-grid { display: flex; flex-direction: column; gap: 16px; margin-top: 12px; }
   .coupon-thumb { 
     width: 100%; border-radius: 8px; border: 1px solid var(--line); 
     cursor: pointer; display: block; transition: 0.1s;
@@ -406,12 +406,32 @@
     <!-- ===================== 新增的優惠券專區 ===================== -->
     <div class="conv-card" style="margin-top: 16px;">
       <h3>🎟️ 優惠券專區</h3>
-      <p style="font-size: 12px; color: var(--ink-soft); margin: 0 0 8px;">點擊圖片即可放大，方便店員掃描條碼</p>
+      <p style="font-size: 12px; color: var(--ink-soft); margin: 0 0 12px;">點擊圖片即可放大，唐吉訶德請點擊開啟專屬網頁</p>
       <div class="coupon-grid">
-        <!-- 這裡放您準備好的優惠券圖檔，替換 src 的連結即可 -->
-        <img src="https://via.placeholder.com/600x200?text=BicCamera+Coupon" alt="BicCamera" class="coupon-thumb">
-        <img src="https://via.placeholder.com/600x200?text=Don+Quijote+Coupon" alt="Don Quijote" class="coupon-thumb">
-        <img src="https://via.placeholder.com/600x200?text=Matsumoto+Kiyoshi" alt="Matsumoto Kiyoshi" class="coupon-thumb">
+        
+        <!-- 唐吉訶德 -->
+        <div>
+          <a href="https://japanportal.donki-global.com/coupon/cp001_zhtw.html" target="_blank" rel="noopener" style="text-decoration: none; display: block; background: #FFF1EE; color: var(--accent); border: 2px solid var(--accent); border-radius: 8px; padding: 12px; text-align: center; font-weight: 800; margin-bottom: 6px;">
+            🔗 開啟唐吉訶德專屬優惠券網頁
+          </a>
+          <div style="font-size:13px; font-weight:700; color:var(--ink); margin-bottom:2px;">唐吉訶德</div>
+          <div style="font-size:12px; color:var(--ink-soft); line-height:1.5;">滿 10,000 日幣 (約 2,000 台幣) 折 5%<br>滿 30,000 日幣 (約 6,000 台幣) 折 7%</div>
+        </div>
+
+        <!-- BicCamera -->
+        <div>
+          <img src="https://raw.githubusercontent.com/paiyuanwu/wuhome_trip/main/BicCamera_20261231_tc.jpg" alt="BicCamera" class="coupon-thumb" style="margin-bottom: 6px;">
+          <div style="font-size:13px; font-weight:700; color:var(--ink); margin-bottom:2px;">BicCamera</div>
+          <div style="font-size:12px; color:var(--ink-soft);">電器 7% / 藥品化妝品 5% / 清酒 3%</div>
+        </div>
+
+        <!-- 愛電王 EDION -->
+        <div>
+          <img src="https://raw.githubusercontent.com/paiyuanwu/wuhome_trip/main/Edion.jpg" alt="愛電王 EDION" class="coupon-thumb" style="margin-bottom: 6px;">
+          <div style="font-size:13px; font-weight:700; color:var(--ink); margin-bottom:2px;">愛電王 EDION</div>
+          <div style="font-size:12px; color:var(--ink-soft);">電器 7% / 藥品化妝品 5%</div>
+        </div>
+
       </div>
     </div>
     
