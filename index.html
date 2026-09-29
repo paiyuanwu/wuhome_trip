@@ -316,12 +316,32 @@
   }
 
   /* ---------- COUPONS ---------- */
-  .coupon-grid { display: flex; flex-direction: column; gap: 16px; margin-top: 12px; }
+  .coupon-grid { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
+  .coupon-item { 
+    display: flex; align-items: center; justify-content: space-between; 
+    background: var(--paper-2); padding: 12px; border-radius: 10px; 
+    gap: 12px; border: 1px solid transparent; 
+  }
+  .coupon-info { flex: 1; }
+  .coupon-title { font-size: 14px; font-weight: 800; color: var(--ink); margin-bottom: 4px; }
+  .coupon-desc { font-size: 12px; color: var(--ink-soft); line-height: 1.4; }
   .coupon-thumb { 
-    width: 100%; border-radius: 8px; border: 1px solid var(--line); 
-    cursor: pointer; display: block; transition: 0.1s;
+    width: 80px; height: 56px; object-fit: cover; object-position: top;
+    background: #FFF; border: 1px solid var(--line); border-radius: 6px; 
+    padding: 2px; cursor: pointer; transition: 0.1s; 
   }
   .coupon-thumb:active { opacity: 0.8; }
+  .coupon-placeholder {
+    width: 80px; height: 56px; background: #E2E8F0; border-radius: 6px; 
+    display: flex; align-items: center; justify-content: center; 
+    font-size: 11px; color: #94A3B8; font-weight: 700; border: 1px dashed #CBD5E1;
+  }
+  .coupon-btn {
+    background: #FFF1EE; color: var(--accent); padding: 6px 12px; 
+    border-radius: 6px; text-decoration: none; font-weight: 700; 
+    font-size: 12px; border: 1px solid var(--accent); 
+    text-align: center; display: inline-block; margin-top: 6px;
+  }
   #coupon-modal-img { max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: 8px; }
 
 </style>
@@ -405,31 +425,54 @@
 
     <!-- ===================== 新增的優惠券專區 ===================== -->
     <div class="conv-card" style="margin-top: 16px;">
-      <h3>🎟️ 優惠券專區</h3>
-      <p style="font-size: 12px; color: var(--ink-soft); margin: 0 0 12px;">點擊圖片即可放大，唐吉訶德請點擊開啟專屬網頁</p>
+      <h3>🎟️ 優惠與會員條碼</h3>
+      <p style="font-size: 12px; color: var(--ink-soft); margin: 0 0 12px;">點擊右側圖片可放大條碼給店員掃描</p>
+      
       <div class="coupon-grid">
         
         <!-- 唐吉訶德 -->
-        <div>
-          <a href="https://japanportal.donki-global.com/coupon/cp001_zhtw.html" target="_blank" rel="noopener" style="text-decoration: none; display: block; background: #FFF1EE; color: var(--accent); border: 2px solid var(--accent); border-radius: 8px; padding: 12px; text-align: center; font-weight: 800; margin-bottom: 6px;">
-            🔗 開啟唐吉訶德專屬優惠券網頁
-          </a>
-          <div style="font-size:13px; font-weight:700; color:var(--ink); margin-bottom:2px;">唐吉訶德</div>
-          <div style="font-size:12px; color:var(--ink-soft); line-height:1.5;">滿 10,000 日幣 (約 2,000 台幣) 折 5%<br>滿 30,000 日幣 (約 6,000 台幣) 折 7%</div>
+        <div class="coupon-item">
+          <div class="coupon-info">
+            <div class="coupon-title">唐吉訶德</div>
+            <div class="coupon-desc">滿 10,000 日幣 (約 2,000 台幣) 折 5%<br>滿 30,000 日幣 (約 6,000 台幣) 折 7%</div>
+            <a href="https://japanportal.donki-global.com/coupon/?ptcd=0156000103" target="_blank" rel="noopener" class="coupon-btn">🔗 開啟專屬網頁</a>
+          </div>
         </div>
 
         <!-- BicCamera -->
-        <div>
-          <img src="https://raw.githubusercontent.com/paiyuanwu/wuhome_trip/main/BicCamera_20261231_tc.jpg" alt="BicCamera" class="coupon-thumb" style="margin-bottom: 6px;">
-          <div style="font-size:13px; font-weight:700; color:var(--ink); margin-bottom:2px;">BicCamera</div>
-          <div style="font-size:12px; color:var(--ink-soft);">電器 7% / 藥品化妝品 5% / 清酒 3%</div>
+        <div class="coupon-item">
+          <div class="coupon-info">
+            <div class="coupon-title">BicCamera</div>
+            <div class="coupon-desc">電器 7% / 藥品化妝品 5% / 清酒 3%</div>
+          </div>
+          <img src="https://raw.githubusercontent.com/paiyuanwu/wuhome_trip/main/BicCamera_20261231_tc.jpg" alt="BicCamera" class="coupon-thumb">
+        </div>
+
+        <!-- UNIQLO -->
+        <div class="coupon-item">
+          <div class="coupon-info">
+            <div class="coupon-title">Uniqlo 會員</div>
+            <div class="coupon-desc">結帳掃描會員條碼</div>
+          </div>
+          <img src="https://raw.githubusercontent.com/paiyuanwu/wuhome_trip/main/UQ.jpg" alt="Uniqlo 會員" class="coupon-thumb">
+        </div>
+
+        <!-- GU -->
+        <div class="coupon-item">
+          <div class="coupon-info">
+            <div class="coupon-title">GU 會員</div>
+            <div class="coupon-desc">結帳掃描會員條碼</div>
+          </div>
+          <img src="https://raw.githubusercontent.com/paiyuanwu/wuhome_trip/main/GU.jpg" alt="GU 會員" class="coupon-thumb">
         </div>
 
         <!-- 愛電王 EDION -->
-        <div>
-          <img src="https://raw.githubusercontent.com/paiyuanwu/wuhome_trip/main/Edion.jpg" alt="愛電王 EDION" class="coupon-thumb" style="margin-bottom: 6px;">
-          <div style="font-size:13px; font-weight:700; color:var(--ink); margin-bottom:2px;">愛電王 EDION</div>
-          <div style="font-size:12px; color:var(--ink-soft);">電器 7% / 藥品化妝品 5%</div>
+        <div class="coupon-item">
+          <div class="coupon-info">
+            <div class="coupon-title">愛電王 EDION</div>
+            <div class="coupon-desc">電器 7% / 藥品化妝品 5%</div>
+          </div>
+          <img src="https://raw.githubusercontent.com/paiyuanwu/wuhome_trip/main/Edion.jpg" alt="愛電王 EDION" class="coupon-thumb">
         </div>
 
       </div>
